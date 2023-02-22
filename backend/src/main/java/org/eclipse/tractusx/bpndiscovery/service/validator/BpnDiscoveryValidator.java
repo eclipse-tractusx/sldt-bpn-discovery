@@ -23,7 +23,7 @@ import java.util.HashMap;
 
 import org.eclipse.tractusx.bpndiscovery.BpnDiscoveryProperties;
 import org.eclipse.tractusx.bpndiscovery.model.BpnDiscovery;
-import org.eclipse.tractusx.bpndiscovery.service.ValidationException;
+import org.eclipse.tractusx.bpndiscovery.service.exception.ValidationException;
 import org.springframework.stereotype.Component;
 
 @Component

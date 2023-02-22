@@ -42,8 +42,7 @@ public class TestJwtTokenFactory {
    public RequestPostProcessor allRoles_andBpn() {
       return bpnOwner.allRoles_andBpn();
    }
-
-   //different bpn than "default_bpn"
+   
    public RequestPostProcessor searchBpnDiscoveryEndpoints_differentBpn() {
       return bpnOwner.searchBpnDiscoveryEndpoints_differentBpn();
    }

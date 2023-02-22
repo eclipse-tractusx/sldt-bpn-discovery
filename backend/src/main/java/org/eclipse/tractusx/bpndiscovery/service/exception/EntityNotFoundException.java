@@ -17,21 +17,10 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
-package org.eclipse.tractusx.bpndiscovery.service.utils;
+package org.eclipse.tractusx.bpndiscovery.service.exception;
 
-import java.util.Map;
-import java.util.regex.Pattern;
-
-import org.eclipse.tractusx.bpndiscovery.service.exception.ValidationException;
-
-public class UuidUtils {
-   private static final Pattern PATTERN =
-         Pattern.compile( "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$" );
-
-   public static void validateUUID( String uuidAsString ) {
-      if ( !PATTERN.matcher( uuidAsString ).matches() ) {
-         throw new ValidationException( "Validation failed.",
-               Map.of( "value format", String.format( "Format for the value '%s' is not correct.", uuidAsString ) ) );
-      }
+public class EntityNotFoundException extends RuntimeException {
+   public EntityNotFoundException( String message ) {
+      super( message );
    }
 }

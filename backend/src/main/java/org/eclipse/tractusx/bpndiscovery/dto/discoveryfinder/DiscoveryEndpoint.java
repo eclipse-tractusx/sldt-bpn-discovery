@@ -17,21 +17,34 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
-package org.eclipse.tractusx.bpndiscovery.service.utils;
+package org.eclipse.tractusx.bpndiscovery.dto.discoveryfinder;
 
-import java.util.Map;
-import java.util.regex.Pattern;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import org.eclipse.tractusx.bpndiscovery.service.exception.ValidationException;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class UuidUtils {
-   private static final Pattern PATTERN =
-         Pattern.compile( "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$" );
+@Data
+@NoArgsConstructor
+@Builder
+@AllArgsConstructor
+public class DiscoveryEndpoint {
 
-   public static void validateUUID( String uuidAsString ) {
-      if ( !PATTERN.matcher( uuidAsString ).matches() ) {
-         throw new ValidationException( "Validation failed.",
-               Map.of( "value format", String.format( "Format for the value '%s' is not correct.", uuidAsString ) ) );
-      }
-   }
+   @JsonProperty( "type" )
+   private String type;
+
+   @JsonProperty( "description" )
+   private String description;
+
+   @JsonProperty( "endpointAddress" )
+   private String endpointAddress;
+
+   @JsonProperty( "documentation" )
+   private String documentation;
+
+   @JsonProperty( "resourceId" )
+   private String resourceId;
+
 }

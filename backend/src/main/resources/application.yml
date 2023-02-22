@@ -19,9 +19,13 @@
 ###############################################################
 bpndiscovery:
   allowedTypes:
+  description:
+  endpointAddress:
+  documentation:
   idm:
     public-client-id:
     bpn-id-claim-name:
+  scheduler:
 
 spring:
   application:
@@ -39,6 +43,19 @@ spring:
       resourceserver:
         jwt:
           issuer-uri:
+      # Client/Provider is used to call discovery-finder
+      client:
+        registration:
+          discoveryfinder-client:
+            client-id:
+            client-secret:
+            authorization-grant-type:
+        provider:
+          discoveryfinder-client:
+            token-uri:
+# baseUrl to register service in discovery-finder
+discoveryfinder-client:
+  baseUrl:
 
 server:
   port: 4243

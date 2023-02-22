@@ -17,7 +17,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
-package org.eclipse.tractusx.bpndiscovery.service;
+package org.eclipse.tractusx.bpndiscovery.service.exception;
 
 import java.util.Map;
 

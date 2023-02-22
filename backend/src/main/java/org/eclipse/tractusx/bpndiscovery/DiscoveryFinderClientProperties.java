@@ -17,10 +17,18 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
-package org.eclipse.tractusx.bpndiscovery.service;
+package org.eclipse.tractusx.bpndiscovery;
 
-public class EntityNotFoundException extends RuntimeException {
-   public EntityNotFoundException( String message ) {
-      super( message );
-   }
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
+
+import jakarta.validation.constraints.NotEmpty;
+import lombok.Data;
+
+@Data
+@Validated
+@ConfigurationProperties( prefix = "discoveryfinder-client" )
+public class DiscoveryFinderClientProperties {
+   @NotEmpty( message = "baseUrl must not be empty" )
+   private String baseUrl;
 }

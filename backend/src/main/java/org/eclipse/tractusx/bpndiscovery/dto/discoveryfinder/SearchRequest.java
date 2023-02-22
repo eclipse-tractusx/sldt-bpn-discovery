@@ -17,21 +17,29 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
-package org.eclipse.tractusx.bpndiscovery.service.utils;
+package org.eclipse.tractusx.bpndiscovery.dto.discoveryfinder;
 
-import java.util.Map;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.eclipse.tractusx.bpndiscovery.service.exception.ValidationException;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class UuidUtils {
-   private static final Pattern PATTERN =
-         Pattern.compile( "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$" );
+import jakarta.validation.Valid;
 
-   public static void validateUUID( String uuidAsString ) {
-      if ( !PATTERN.matcher( uuidAsString ).matches() ) {
-         throw new ValidationException( "Validation failed.",
-               Map.of( "value format", String.format( "Format for the value '%s' is not correct.", uuidAsString ) ) );
-      }
+public class SearchRequest {
+
+   @JsonProperty( "types" )
+   @Valid
+   private List<String> types = new ArrayList<>();
+
+   public SearchRequest types( List<String> types ) {
+      this.types = types;
+      return this;
+   }
+
+   public SearchRequest addTypesItem( String typesItem ) {
+      this.types.add( typesItem );
+      return this;
    }
 }
+

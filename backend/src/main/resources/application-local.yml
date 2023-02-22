@@ -18,23 +18,42 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
+server:
+  port: 8686
+
 spring:
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: "http://localhost:8181/realms/bpnDiscovery"
+      client:
+        registration:
+          discoveryfinder-client:
+            client-id: discovery-client
+            client-secret: "client-secret"
+            authorization-grant-type: client_credentials
+        provider:
+          discoveryfinder-client:
+            token-uri: "http://localhost:8181/realms/discovery/protocol/openid-connect/token"
   datasource:
     driverClassName: org.h2.Driver
     password: tractusx
     username: tractusx
     url: jdbc:h2:file:./persistence/bpndicoverydb;CASE_INSENSITIVE_IDENTIFIERS=TRUE
 
+discoveryfinder-client:
+  baseUrl: "http://localhost:4243/"
+
 bpndiscovery:
-  allowedTypes: oen,bpid
+  allowedTypes: oen
+  description: "Service to discover BPN to a particular OEN"
+  endpointAddress: "http://localhost:8686"
+  documentation: "http://myInterface/swagger/index.html"
   idm:
     public-client-id: bpndiscovery
     bpn-id-claim-name: bpn
+  scheduler: "@hourly"
 
 # Properties develop against a postgres instance
 # You can start a postgres instance using the docker-compose file located in the backend/postgres/ directory
@@ -43,11 +62,9 @@ bpndiscovery:
 #  driverClassName: org.postgresql.Driver
 #  username: postgres
 #  password: example
-
 h2:
   console:
     path: /admin/database
     enabled: true
     settings:
       web-allow-others: true
-
