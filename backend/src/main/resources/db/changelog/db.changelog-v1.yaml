@@ -23,7 +23,7 @@ databaseChangeLog:
       author: slindner
       changes:
         - createTable:
-            tableName: BPN_DISCOVERY
+            tableName: bpn_discovery
             columns:
               - column:
                   name: ID
@@ -33,33 +33,33 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: TYPE
+                  name: type
                   type: nvarchar(200)
                   constraints:
                     nullable: false
               - column:
-                  name: KEY
+                  name: key
                   type: nvarchar(200)
                   constraints:
                     nullable: false
               - column:
-                  name: VALUE
+                  name: value
                   type: nvarchar(200)
                   constraints:
                     nullable: false
               - column:
-                  name: RESOURCE_ID
+                  name: resource_id
                   type: ${uuid_type}
                   defaultValueComputed: ${uuid_function}
                   constraints:
                     nullable: false
         - addUniqueConstraint:
-            columnNames: TYPE, KEY, VALUE
-            constraintName: BPN_AK_01
-            tableName: BPN_DISCOVERY
+            columnNames: type, key, value
+            constraintName: bpn_ak_01
+            tableName: bpn_discovery
             validate: true
         - addUniqueConstraint:
-            columnNames: RESOURCE_ID
-            constraintName: BPN_AK_02
-            tableName: BPN_DISCOVERY
+            columnNames: resource_id
+            constraintName: bpn_ak_02
+            tableName: bpn_discovery
             validate: true

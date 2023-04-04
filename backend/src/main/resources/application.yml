@@ -17,13 +17,39 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
-
-
 bpndiscovery:
   allowedTypes:
   idm:
     public-client-id:
     bpn-id-claim-name:
+
+spring:
+  application:
+    name: bpn-discovery
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 215MB
+      file-size-threshold: 2KB
+  jackson:
+    default-property-inclusion: non_null
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri:
+
+server:
+  port: 4243
+  ssl:
+    key-store-password: __KEYSTOREPASSWORD__
+    key-store: classpath:conf/__KEYSTOREFILENAME__.p12
+    key-store-type: PKCS12
+    key-alias: 1
+    enabled: false
+  forward-headers-strategy: framework
+
 springdoc:
   cache:
     disabled: true
@@ -35,13 +61,12 @@ springdoc:
       - name: BPN Discovery API
         url: /bpn-discovery-service-openapi.yaml
 
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri:
-
+http:
+  timeout:
+    write: 10000
+    connect: 10000
+    call: 10000
+    read: 10000
 
 management:
   endpoint:
@@ -54,8 +79,6 @@ management:
     web:
       exposure:
         include: health,info
-
-
 
 title: '@project.name@'
 project_desc: '@project.description@'

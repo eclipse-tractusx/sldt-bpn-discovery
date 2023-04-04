@@ -21,6 +21,7 @@ package org.eclipse.tractusx.bpndiscovery;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.eclipse.tractusx.bpndiscovery.repository.BpnDiscoveryRepository;
 import org.eclipse.tractusx.bpndiscovery.security.TestJwtTokenFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -54,6 +55,9 @@ public abstract class AbstractBpnDiscoveryApiTest {
 
    @Autowired
    protected TestJwtTokenFactory testJwtTokenFactory;
+
+   @Autowired
+   protected BpnDiscoveryRepository bpnDiscoveryRepository;
 
    protected ObjectNode createTypeKeyPayLoad( String type, String key ) {
       ObjectNode requestNode = mapper.createObjectNode();

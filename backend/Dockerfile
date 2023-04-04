@@ -18,36 +18,28 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: "http://localhost:8181/realms/bpnDiscovery"
-  datasource:
-    driverClassName: org.h2.Driver
-    password: tractusx
-    username: tractusx
-    url: jdbc:h2:file:./persistence/bpndicoverydb;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+# Dockerfile to create image for bpn discovery application
 
-bpndiscovery:
-  allowedTypes: oen,bpid
-  idm:
-    public-client-id: bpndiscovery
-    bpn-id-claim-name: bpn
+# step 1: build
+FROM maven:3.9.0-eclipse-temurin-17 AS builder
+COPY . /build
+WORKDIR /build
+RUN mvn clean package
 
-# Properties develop against a postgres instance
-# You can start a postgres instance using the docker-compose file located in the backend/postgres/ directory
-# datasource:
-#  url: jdbc:postgresql://localhost:5432/postgres
-#  driverClassName: org.postgresql.Driver
-#  username: postgres
-#  password: example
+# step 2: build image
+FROM eclipse-temurin:17-jre-alpine
 
-h2:
-  console:
-    path: /admin/database
-    enabled: true
-    settings:
-      web-allow-others: true
+RUN addgroup -S spring \
+    && adduser -S spring -G spring \
+    && mkdir -p /service \
+    && chown spring:spring /service
 
+USER spring:spring
+WORKDIR /service
+
+COPY --from=builder /build/backend/target/bpn-discovery-backend*.jar app.jar
+
+ENV JAVA_TOOL_OPTIONS "-Xms512m -Xmx2048m"
+EXPOSE 4243
+
+ENTRYPOINT [ "java","-jar","/service/app.jar" ]
