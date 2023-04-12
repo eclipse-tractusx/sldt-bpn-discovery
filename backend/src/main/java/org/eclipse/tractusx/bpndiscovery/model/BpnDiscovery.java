@@ -29,7 +29,7 @@ import lombok.With;
 
 @Value
 @With
-@Table( "BPN_DISCOVERY" )
+@Table( "bpn_discovery" )
 public class BpnDiscovery {
    @Id
    UUID id;

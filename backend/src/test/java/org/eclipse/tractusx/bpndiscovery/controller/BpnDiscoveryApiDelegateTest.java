@@ -24,9 +24,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.assertj.core.api.Assertions;
 import org.eclipse.tractusx.bpndiscovery.AbstractBpnDiscoveryApiTest;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
@@ -34,8 +34,12 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-@DirtiesContext( classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD )
 public class BpnDiscoveryApiDelegateTest extends AbstractBpnDiscoveryApiTest {
+
+   @BeforeEach
+   public void cleanUp() {
+      bpnDiscoveryRepository.deleteAll();
+   }
 
    @Test
    public void givenValidBpnDiscovery_whenSave_thenSaveSucceeds() throws Exception {

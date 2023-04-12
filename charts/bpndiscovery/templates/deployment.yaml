@@ -1,0 +1,47 @@
+{{- $deployment_name := printf "cx-%s" .Release.Name }}
+{{- $sec_name := printf "%s-sec" $deployment_name }}
+{{- $svc_name := printf "%s-svc" $deployment_name }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $deployment_name }}
+spec:
+  replicas: {{ .Values.bpndiscovery.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ $deployment_name }}
+  template:
+    metadata:
+      labels:
+        app: {{ $deployment_name }}
+    spec:
+      containers:
+        - name: {{ $deployment_name }}
+          image: {{ .Values.bpndiscovery.image.registry }}/{{ .Values.bpndiscovery.image.repository }}:{{ .Values.bpndiscovery.image.version | default .Chart.AppVersion }}
+          imagePullPolicy: {{ .Values.bpndiscovery.image.imagePullPolicy }}
+          {{- if not .Values.bpndiscovery.authentication }}
+          args: [ "--spring.profiles.active=local" ]
+          {{- end }}
+          ports:
+            - containerPort: {{ .Values.bpndiscovery.containerPort }}
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: {{ .Values.bpndiscovery.containerPort }}
+            initialDelaySeconds: 100
+            periodSeconds: 3
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: {{ .Values.bpndiscovery.containerPort }}
+            initialDelaySeconds: 60
+            periodSeconds: 3
+            failureThreshold: 3
+          envFrom:
+            - secretRef:
+                name: {{ $sec_name }}
+          resources:
+{{ .Values.bpndiscovery.resources | toYaml | indent 12 }}
+      imagePullSecrets:
+{{ .Values.bpndiscovery.imagePullSecrets | toYaml | indent 8 }}

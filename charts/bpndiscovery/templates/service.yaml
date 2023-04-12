@@ -1,5 +1,4 @@
-###############################################################
-# Copyright (c) 2023 T-Systems International GmbH
+# Copyright (c) 2023 Robert Bosch Manufacturing Solutions GmbH
 # Copyright (c) 2023 Contributors to the Eclipse Foundation
 #
 # See the NOTICE file(s) distributed with this work for additional
@@ -18,18 +17,18 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-bpndiscovery:
-  allowedTypes: oen
-  idm:
-    public-client-id: bpndiscovery
-    bpn-id-claim-name: bpn
-
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri:
-  datasource:
-    driverClassName: org.h2.Driver
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+{{- $deployment_name := printf "cx-%s" .Release.Name }}
+{{- $svc_name := printf "%s-svc" $deployment_name }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $svc_name }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  type: {{ .Values.bpndiscovery.service.type }}
+  ports:
+    - port:  {{ .Values.bpndiscovery.service.port }}
+      targetPort: {{ .Values.bpndiscovery.containerPort }}
+  selector:
+    app: {{ $deployment_name }}

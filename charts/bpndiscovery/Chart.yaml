@@ -1,5 +1,4 @@
-###############################################################
-# Copyright (c) 2023 T-Systems International GmbH
+# Copyright (c) 2023 Robert Bosch Manufacturing Solutions GmbH
 # Copyright (c) 2023 Contributors to the Eclipse Foundation
 #
 # See the NOTICE file(s) distributed with this work for additional
@@ -17,19 +16,16 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
+apiVersion: v2
+name: bpndiscovery
+description: Tractus-X BPN Discovery Helm Chart
 
-bpndiscovery:
-  allowedTypes: oen
-  idm:
-    public-client-id: bpndiscovery
-    bpn-id-claim-name: bpn
+type: application
+version: 0.1.0
+appVersion: 0.1.0-M1
 
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri:
-  datasource:
-    driverClassName: org.h2.Driver
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+dependencies:
+  - repository: https://charts.bitnami.com/bitnami
+    name: postgresql
+    version: 12.2.3
+    condition: enablePostgres

@@ -55,7 +55,6 @@ public class BpnDiscoveryProperties {
        */
       @NotEmpty( message = "bpnId claimName must not be empty" )
       private String bpnIdClaimName;
-
    }
 
 }
