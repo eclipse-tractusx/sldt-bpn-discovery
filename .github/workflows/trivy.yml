@@ -60,7 +60,7 @@ jobs:
         with:
           sarif_file: "trivy-results1.sarif"
 
-  analyze-registry:
+  analyze-bpn-discovery:
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -90,11 +90,11 @@ jobs:
           exit-code: "1"
           hide-progress: false
           format: "sarif"
-          output: "trivy-results-registry.sarif"
+          output: "trivy-results-bpn-discovery.sarif"
           severity: "CRITICAL,HIGH"
 
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         if: always()
         with:
-          sarif_file: "trivy-results-registry.sarif"
+          sarif_file: "trivy-results-bpn-discovery.sarif"
