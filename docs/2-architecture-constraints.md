@@ -11,7 +11,7 @@ EDC to this BPN.
 
 ### Overall-View
 
-![](/media/image1.png)
+![](media/image1.png)
 
 ### Constraints
 

@@ -31,8 +31,8 @@ type.
 
 ### Stakeholders
 
-|Role   | Description                                     | Goal, Intention                                      |
-|---|-------------------------------------------------|------------------------------------------------------|
-|Consumer   | uses a BPN Discovery                            | wants to find a BPN                                  |
-| Data Provider   | Registers his keys of a specific type in a BPN Discovery | wants that his EDC / Digital Twin can be found       |
-|Catena-X network   |                                                 | to enable the companies to connect and exchange data |
+| Role             | Description                                              | Goal, Intention                                      |
+|------------------|----------------------------------------------------------|------------------------------------------------------|
+| Consumer         | uses a BPN Discovery                                     | wants to find a BPN                                  |
+| Data Provider    | Registers his keys of a specific type in a BPN Discovery | wants that his EDC / Digital Twin can be found       |
+| Catena-X network |                                                          | to enable the companies to connect and exchange data |
