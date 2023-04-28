@@ -2,12 +2,9 @@
 
 ### Architecture
 
-A consumer sends a request to the Discovery Finder for a catalogue for a
-certain type e.g., "bpid". The Discovery Finder responses with a list of
-entries. Now the consumer sends a request to the given BPN Finders. If
-the BPN Finder finds a matching entry he returns the BPN to the
-requester. With the given BPN the consumer can go on and search for the
-EDC to this BPN.
+A consumer sends a request to the Discovery Finder for a catalogue for a certain types e.g., "bpid", "oen". The Discovery Finder responses with a list of endpoints.  
+Now the consumer sends a request to the given BPN Discoveries. If the  BPN Discovery finds a matching entries he returns a List of BPNs.
+With the given BPN the consumer can search for EDCs at the EDC Discovery according to this BPN.
 
 ### Overall-View
 
@@ -22,7 +19,7 @@ EDC to this BPN.
 -   Every Provider handles its own EDC / Digital Twin - this is no
     central service.
 
--   User must have a user-role for BPN Discovery.
+-   Consumer and Data Provider must have a technical user with correct user-roles for BPN Discovery.
 
 -   The BPN Discovery is a central component and must be managed by one
     instance.
@@ -30,8 +27,7 @@ EDC to this BPN.
 -   The Discovery Finder and Keycloak services must be up and running.
     Without them the BPN Discovery can't be found or used.
 
--   Both services, BPN Discovery and Discovery Finder, are depending on
-    each other.
+-   The BPN Discovery rely on Discovery Finder: the BPN Discovery has to register itself on startup. Otherwise, the discovery can't be found.
 
 ### Architecture Constraints
 
