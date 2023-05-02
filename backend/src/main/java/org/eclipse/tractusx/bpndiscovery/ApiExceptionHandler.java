@@ -21,8 +21,8 @@ package org.eclipse.tractusx.bpndiscovery;
 
 import org.eclipse.tractusx.bpndiscovery.model.Error;
 import org.eclipse.tractusx.bpndiscovery.model.ErrorResponse;
-import org.eclipse.tractusx.bpndiscovery.service.EntityNotFoundException;
-import org.eclipse.tractusx.bpndiscovery.service.ValidationException;
+import org.eclipse.tractusx.bpndiscovery.service.exception.EntityNotFoundException;
+import org.eclipse.tractusx.bpndiscovery.service.exception.ValidationException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

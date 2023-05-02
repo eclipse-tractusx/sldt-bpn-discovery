@@ -17,21 +17,30 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
-package org.eclipse.tractusx.bpndiscovery.service.utils;
+package org.eclipse.tractusx.bpndiscovery;
 
-import java.util.Map;
-import java.util.regex.Pattern;
+import org.eclipse.tractusx.bpndiscovery.service.RegisterService;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
-import org.eclipse.tractusx.bpndiscovery.service.exception.ValidationException;
+import lombok.extern.slf4j.Slf4j;
 
-public class UuidUtils {
-   private static final Pattern PATTERN =
-         Pattern.compile( "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$" );
+@Profile( "!test" )
+@Component
+@Slf4j
+public class ApplicationReadyEventListener implements ApplicationListener<ApplicationReadyEvent> {
 
-   public static void validateUUID( String uuidAsString ) {
-      if ( !PATTERN.matcher( uuidAsString ).matches() ) {
-         throw new ValidationException( "Validation failed.",
-               Map.of( "value format", String.format( "Format for the value '%s' is not correct.", uuidAsString ) ) );
-      }
+   private final RegisterService registerService;
+
+   public ApplicationReadyEventListener( RegisterService registerService ) {
+      this.registerService = registerService;
    }
+
+   @Override
+   public void onApplicationEvent( ApplicationReadyEvent event ) {
+      registerService.registerAfterStartup();
+   }
+
 }

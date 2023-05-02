@@ -30,6 +30,8 @@ import org.eclipse.tractusx.bpndiscovery.dto.TypeKeysIdentifierDto;
 import org.eclipse.tractusx.bpndiscovery.model.BpnDiscovery;
 import org.eclipse.tractusx.bpndiscovery.repository.BpnDiscoveryRepository;
 import org.eclipse.tractusx.bpndiscovery.security.ClientAware;
+import org.eclipse.tractusx.bpndiscovery.service.exception.EntityNotFoundException;
+import org.eclipse.tractusx.bpndiscovery.service.exception.ValidationException;
 import org.eclipse.tractusx.bpndiscovery.service.utils.UuidUtils;
 import org.eclipse.tractusx.bpndiscovery.service.validator.BpnDiscoveryValidator;
 import org.springframework.dao.DuplicateKeyException;

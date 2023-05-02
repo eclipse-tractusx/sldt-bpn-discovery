@@ -28,11 +28,13 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jdbc.repository.config.EnableJdbcAuditing;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableJdbcAuditing
-@EnableConfigurationProperties( BpnDiscoveryProperties.class )
+@EnableConfigurationProperties( { BpnDiscoveryProperties.class, DiscoveryFinderClientProperties.class } )
 @ComponentScan( basePackages = { "org.eclipse.tractusx.bpndiscovery", "org.openapitools.configuration" } )
+@EnableScheduling
 public class BpnDiscoveryApplication {
 
    @Bean
