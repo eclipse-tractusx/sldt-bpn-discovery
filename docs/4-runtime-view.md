@@ -77,7 +77,7 @@
     new entry in the database.
 
 
-### Delete request**
+### Delete request
 
 ![](media/image7.PNG)
 

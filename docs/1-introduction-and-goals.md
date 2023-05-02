@@ -10,9 +10,8 @@ a given type / key pair e.g., for a "oen".
 
 ### High level requirement
 
-The BPN Discovery is a central component to connect data consumers and
-data provider by helping to find according BPNs for a key for a given
-type.
+The BPN Discovery is used to find according BPNs for a given
+type / key combination.
 
 ### Quality goals
 
@@ -26,7 +25,7 @@ type.
 
 -   Discovery Finder and BPN Discovery are "central" services
     (horizontal and vertical scalability included) and meant to help to
-    connect companies. So, one goal is to be integrated into the
+    connect companies. So, it is integrated into the
     Catena-X network with all their services.
 
 ### Stakeholders
