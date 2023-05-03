@@ -9,7 +9,7 @@
 | Consumer App     | Searches a BPN                               |
 | Data Provider    | Registers his type and keys at BPN Discovery |
 | Discovery Finder | Provides the endpoints of BPN Discoveries    |
-| Keycloak         | Administrates the authorization token        |
+| Keycloak         | Keycloak is used for token validation        |
 
 
 ### Technical Context

@@ -16,9 +16,10 @@ There are two actors who interact with this service.
 |---------------|-----------------------------------------------------------------------------------------------|---------------------------------------------------------------|
 | Data Consumer | The Data Consumer uses the BPN Discovery to search for BPN of a given type / key combination. | A consumer searches for a BPN for type "oen" / key "123-oen". |
 | Data Provider | The Data Provider adds or deletes his type / key combinations for his BPN.                    | A provider add a type "oen" / key "123-oen" under his BPN.    |
+| Keycloak      | Keycloak is used for token validation                                                         |                                                               |
 
 ## BPN Discovery Api
-The BPN Discovery provides a Swagger-Interface for all endpoints: https://semantics.int.demo.catena-x.net/bpndiscovery/swagger-ui/index.html#/
+The BPN Discovery provides a Swagger-Interface for all endpoints: https://semantics.int.demo.catena-x.net/bpndiscovery/swagger-ui/index.html
 
 #### Search request
 ![](media/Search_BPN.PNG)
@@ -75,3 +76,7 @@ valid Bearer Token. Authorization is provided by a role based access. These role
 
 The Bearer Token also provide a claim with the BPN. This BPN is uses to store entries. 
 When an entries shall be deleted this BPN is used to verify that the requester is allowed to do so.
+
+## Deployment
+To deploy this system, you need to use the Helm Chart in a running
+Kubernetes cluster. The Helm Chart is located under "charts/bpndiscovery". For further information checkout the readme.md. 

@@ -11,4 +11,4 @@ For Deployment needed:
 To deploy this system, you need to use the Helm Chart in a running
 Kubernetes cluster. The Helm Chart is located under "charts/bpndiscovery".
 In case you don't have a running cluster, you can set up one by yourself
-locally, using minikube. For more information checkout our readme.md.
+locally, using minikube. For further information checkout the readme.md.
