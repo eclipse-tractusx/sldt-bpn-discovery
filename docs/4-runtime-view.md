@@ -2,7 +2,7 @@
 
 ### Search request
 
-![](media/image4.PNG)
+![](media/SearchFlow.PNG)
 
 1.  The ConsumerApp sends a request with a given type number and type to
     BpnDiscoveryApiDelegate.
@@ -24,7 +24,7 @@
 
 ### Add request
 
-![](media/image5.PNG)
+![](media/AddFlow.PNG)
 
 
 1.  The Data Provider sends a request with one given type number and
@@ -50,7 +50,7 @@
 
 ### Add batch request
 
-![](media/image6.PNG)
+![](media/AddBatchFlow.PNG)
 
 
 1.  The Data Provider sends a request with multiple given type numbers
@@ -79,7 +79,7 @@
 
 ### Delete request
 
-![](media/image7.PNG)
+![](media/DeleteFlow.PNG)
 
 1.  The Data Provider sends a request to delete an entry to
     BpnDiscoveryApiDelegate.

@@ -5,9 +5,9 @@ This page provides an overview of the BPN Discovery.
 ## Architectural Overview
 The Digital Twins are no longer administrated in a central registry anymore. The implementation of two services, "Discovery Finder" and "BPN
 Discovery", ensures that EDCs still can be found in the decentralized environment.
-The BPN Discovery hereby is responsible to send BPNs for a given type / key kombination e.g. for "oen"s.
+The BPN Discovery hereby is responsible to send BPNs for a given type / key combination e.g. for "oen"s.
 
-![](media/image1.png)
+![](media/OverallConcept.png)
 
 ## Actors
 There are two actors who interact with this service.
@@ -24,43 +24,43 @@ The BPN Discovery provides a Swagger-Interface for all endpoints: https://semant
 #### Search request
 ![](media/Search_BPN.PNG)
 
-Request body
+**Request body**
 
 ![](media/Search_Request_BPn.PNG)
 
-Response
+**Response**
 
 ![](media/Response_Search_BPN.PNG)
 
 #### Add request
 ![](media/Add_BPN.PNG)
 
-Request body
+**Request body**
 
 ![](media/Add_Request_BPN.PNG)
 
-Response
+**Response**
 
 ![](media/Respnse_add_BPN.PNG)
 #### Add batch request
 ![](media/Add_Batch_BPN.PNG)
 
-Request
+**Request**
 
 ![](media/add_batch_request.PNG)
 
-Response
+**Response**
 
 ![](media/add_batch_response_BPN.PNG)
 
 #### Delete request
 ![](media/Delete_BPN.PNG)
 
-ResourceId
+**ResourceId**
 
 ![](media/resourceID_BPN.PNG)
 
-Response
+**Response**
 
 ![](media/Delete_Response_BPN.PNG)
 

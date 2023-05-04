@@ -2,7 +2,7 @@
 
 ### Overall Concept
 
-The overall concept can be found under **2 Architecture and
+#The overall concept can be found under **2 Architecture and
 constraints**.
 
 ### BPN Discovery API
@@ -14,12 +14,12 @@ endpoints.
 The Api with its links can be found here: [BPN Discovery Api] (https://semantics.int.demo.catena-x.net/bpndiscovery/swagger-ui/index.html#/Discovery)
 
 
-**POST[/api/administration/connectors/bpnDiscovery](https://semantics.int.demo.catena-x.net/bpndiscovery/swagger-ui/index.html#/Discovery/PostBpnDiscovery)**
+#### POST [/api/administration/connectors/bpnDiscovery]
 
 Create new numbers (e.g., OEN, batteryID, etc.) corresponding to BPN
 endpoints as single entry.
 
-<b> Request body </b>
+**Request body**
 
 ```json
 {
@@ -27,7 +27,7 @@ endpoints as single entry.
   "key": "oen-123"
 }
 ```
-<b> Response </b>
+**Response**
 
 ```json
 {
@@ -40,12 +40,12 @@ endpoints as single entry.
 This service is allowed to **administrators only**.
 
 
-**POST[/api/administration/connectors/bpnDiscovery/batch](https://semantics.int.demo.catena-x.net/bpndiscovery/swagger-ui/index.html#/Discovery/PostBatchBpnDiscovery)**
+#### POST [/api/administration/connectors/bpnDiscovery/batch]
 
 Create new numbers (e.g., OEN, batteryID, etc.) corresponding to BPN
 endpoints as batch.
 
-<b> Request body </b>
+**Request body**
 
 ```json 
 [
@@ -64,7 +64,7 @@ endpoints as batch.
 ]
 ```
 
-<b> Response </b>
+**Response**
 
 ```json
 [
@@ -94,11 +94,11 @@ endpoints as batch.
 This service is allowed to **administrators only**.
 
 
-**POST[/api/administration/connectors/bpnDiscovery/search](https://semantics.int.demo.catena-x.net/bpndiscovery/swagger-ui/index.html#/Discovery/GetBpnDiscoveries)**
+#### POST [/api/administration/connectors/bpnDiscovery/search]
 
 Find BPN endpoints corresponding to numbers (e.g., OEN, batteryID, etc.)
 
-<b> Request body </b>
+**Request body**
 
 ```json
 {"searchFilter": 
@@ -118,7 +118,7 @@ Find BPN endpoints corresponding to numbers (e.g., OEN, batteryID, etc.)
 }
 ```
 
-<b> Response </b>
+**Response**
 
 ```json
 {
@@ -152,7 +152,7 @@ Find BPN endpoints corresponding to numbers (e.g., OEN, batteryID, etc.)
 }
 ```
 
-**DELETE[/api/administration/connectors/bpnDiscovery/{resourceId}](https://semantics.int.demo.catena-x.net/bpndiscovery/swagger-ui/index.html#/Discovery/DeleteBpnDiscoveryById)**
+#### DELETE [/api/administration/connectors/bpnDiscovery/{resourceId}]
 
 Delete numbers (e.g., OEN, batteryID, etc.) corresponding to BPN
 endpoints as single entry.
@@ -166,7 +166,7 @@ Response: http Status Code 204 -> no response
 An OpenApi.yaml for this service can be found under
 "backend/src/main/resources/static/bpn-discovery-service-openapi.yaml"
 
-**Security / Safety / Use the JWT Token to get the BPN from requester**
+### Security / Safety / Use the JWT Token to get the BPN from requester
 
 The whole environment is secured with Keycloak. The BPN Discovery has a
 realm entry in Keycloak. Every user who wants to use BPN Discovery needs

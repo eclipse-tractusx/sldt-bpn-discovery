@@ -4,12 +4,12 @@
 
 A consumer sends a request to the Discovery Finder with a catalogue of a certain types e.g., "bpid", "oen". The Discovery Finder
 responses with a list of endpoints of BPN Discoveries which provide BPNs for these kind of types.  
-Subsequently the consumer sends a request to the given BPN Discoveries. If the BPN Discovery finds a matching entries he returns a List of BPNs.
+Subsequently the consumer sends a request to the given BPN Discoveries. If the BPN Discovery finds a matching entries he returns a list of BPNs.
 With the given BPN the consumer can search for EDCs at the EDC Discovery according to this BPN.
 
 ### Overall-View
 
-![](media/image1.png)
+![](media/OverallConcept.png)
 
 ### Architecture
 A consumer can request for BPNs for a given type/key combination, e.g. "oen" / "example-oen". The BPN Discovery responses
@@ -32,7 +32,7 @@ with the BPN, if it is in its database.
 -   The Discovery Finder and Keycloak services must be up and running.
     Without them the BPN Discovery can't be found or used.
 
--   The BPN Discovery rely on Discovery Finder: the BPN Discovery has to register itself on startup. Otherwise, the discovery can't be found.
+-   The BPN Discovery rely on Discovery Finder: the BPN Discovery has to register itself on startup otherwise, the discovery can't be found.
 
 ### Architecture Constraints
 

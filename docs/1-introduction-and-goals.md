@@ -5,8 +5,8 @@ anymore. The implementation of two services, "Discovery Finder" and "BPN
 Discovery", ensure that Eclipse Data Space Connectors (EDC) can be found in the decentralized
 environment.
 
-The BPN Discovery is responsible to help to find a corresponding Business Partner Number (BPN) to
-a given type / key pair e.g., for a "oen".
+The BPN Discovery is responsible to find a corresponding Business Partner Number (BPN) to
+a given type / key pair e.g. "oen".
 
 ### High level requirement
 
@@ -23,8 +23,7 @@ The BPN Discovery is used to find according BPNs for a given type / key combinat
 
 -   Discovery Finder and BPN Discovery are "central" services
     (horizontal and vertical scalability included) and meant to help to
-    connect companies. So, it is integrated into the
-    Catena-X network with all their services.
+    connect companies. So, it is integrated into the Catena-X network.
 
 ### Stakeholders
 
