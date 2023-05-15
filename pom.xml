@@ -72,6 +72,7 @@
       <jackson-nullable.version>0.2.5</jackson-nullable.version>
       <jakarta.validation.version>3.0.2</jakarta.validation.version>
       <snakeyaml.version>2.0</snakeyaml.version>
+      <webflux-version>6.0.6</webflux-version>
       <!-- logging -->
       <slf4j.version>2.0.6</slf4j.version>
       <logback.version>1.4.5</logback.version>
@@ -86,6 +87,7 @@
       <junit.version>5.9.2</junit.version>
       <!-- build -->
       <maven.compiler.version>3.8.1</maven.compiler.version>
+      <wiremock-standalone.version>2.27.2</wiremock-standalone.version>
    </properties>
 
    <modules>
@@ -137,6 +139,11 @@
          <groupId>jakarta.validation</groupId>
          <artifactId>jakarta.validation-api</artifactId>
          <version>${jakarta.validation.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-webflux</artifactId>
+         <version>${webflux-version}</version>
       </dependency>
 
       <!-- logging -->
@@ -212,6 +219,12 @@
          <groupId>org.junit.jupiter</groupId>
          <artifactId>junit-jupiter</artifactId>
          <version>${junit.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>com.github.tomakehurst</groupId>
+         <artifactId>wiremock-standalone</artifactId>
+         <version>${wiremock-standalone.version}</version>
          <scope>test</scope>
       </dependency>
    </dependencies>

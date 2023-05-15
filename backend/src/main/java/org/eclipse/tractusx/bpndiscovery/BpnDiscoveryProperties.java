@@ -36,6 +36,11 @@ public class BpnDiscoveryProperties {
    @NotEmpty( message = "allowedTypes (oen,etc.) must not be empty" )
    private List<String> allowedTypes;
 
+   private String description;
+   @NotEmpty( message = "endppointAddress must not be empty" )
+   private String endpointAddress;
+   private String documentation;
+
    private final Idm idm = new Idm();
 
    /**
@@ -55,6 +60,7 @@ public class BpnDiscoveryProperties {
        */
       @NotEmpty( message = "bpnId claimName must not be empty" )
       private String bpnIdClaimName;
+
    }
 
 }

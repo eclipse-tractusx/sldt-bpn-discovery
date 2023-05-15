@@ -18,18 +18,37 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
+
 bpndiscovery:
   allowedTypes: oen
+  description: "Service to discover BPN to a particular OEN"
+  endpointAddress: "http://localhost:86866"
+  documentation: "http://.../swagger/index.html"
   idm:
     public-client-id: bpndiscovery
     bpn-id-claim-name: bpn
+  scheduler: "@hourly"
 
 spring:
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri:
+          issuer-uri: "http://localhost:8181/realms/bpnDiscovery"
+      client:
+        registration:
+          discoveryfinder-client:
+            client-id: discovery-client
+            client-secret: 
+            authorization-grant-type: client_credentials
+        provider:
+          discoveryfinder-client:
+            # wiremock server starts on localhost:8585 and mock the authentication.
+            token-uri: "http://localhost:8585/realms/discovery/protocol/openid-connect/token"
   datasource:
     driverClassName: org.h2.Driver
     url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+
+discoveryfinder-client:
+  # wiremock server starts on localhost:8585 and mock the baseurl of discoveryfinder.
+  baseUrl: "http://localhost:8585/"
