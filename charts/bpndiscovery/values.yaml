@@ -47,7 +47,7 @@ bpndiscovery:
       clientId: default-discovery-finder-client
       clientSecret: ""
       authorizationGrantType: client_credentials
-    schedulerCronFrequency: ""
+    schedulerCronFrequency: "0 12 * * ?"
     provider:
       tokenUri: ""
   service:
