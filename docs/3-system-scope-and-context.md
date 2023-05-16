@@ -14,7 +14,7 @@
 
 ### Technical Context
 
-![](media/TecnicalContext.PNG)
+![](media/TechnicalContext.PNG)
 
 | Neighbor         | Description                                                              |
 |------------------|--------------------------------------------------------------------------|
