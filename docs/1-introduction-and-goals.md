@@ -1,7 +1,6 @@
 ## 1 Introduction and goals
 
-The Digital Twins are no longer administrated in a central registry
-anymore. The implementation of two services, "Discovery Finder" and "BPN
+The Digital Twins are no longer administrated in a central registry. The implementation of two services, "Discovery Finder" and "BPN
 Discovery", ensure that Eclipse Data Space Connectors (EDC) can be found in the decentralized
 environment.
 
@@ -30,5 +29,11 @@ The BPN Discovery is used to find according BPNs for a given type / key combinat
 | Role             | Description                                              | Goal, Intention                                      |
 |------------------|----------------------------------------------------------|------------------------------------------------------|
 | Consumer         | uses a BPN Discovery                                     | wants to find a BPN                                  |
-| Data Provider    | Registers his keys of a specific type in a BPN Discovery | wants that his EDC / Digital Twin can be found       |
-| Catena-X network |                                                          | to enable the companies to connect and exchange data |
+| Data Provider    | registers his keys of a specific type in a BPN Discovery | wants that his EDC / Digital Twin can be found       |
+| Catena-X network | provides the environment and operates the services       | to enable the companies to connect and exchange data |
+
+#### Legal Notice
+* SPDX-License-Identifier: CC-BY-4.0
+* Licence Path: https://creativecommons.org/licenses/by/4.0/legalcode
+* Copyright statements
+* Source URL: https://github.com/eclipse-tractusx/sldt-bpn-discovery

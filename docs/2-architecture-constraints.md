@@ -2,9 +2,9 @@
 
 ### Overall Architecture
 
-A consumer sends a request to the Discovery Finder with a catalogue of a certain types e.g., "bpid", "oen". The Discovery Finder
+A consumer sends a request to the Discovery Finder with a catalogue of a certain type e.g., "bpid", "oen". The Discovery Finder
 responses with a list of endpoints of BPN Discoveries which provide BPNs for these kind of types.  
-Subsequently the consumer sends a request to the given BPN Discoveries. If the BPN Discovery finds a matching entries he returns a list of BPNs.
+Subsequently the consumer sends a request to the given BPN Discoveries. If the BPN Discovery finds matching entries he returns a list of BPNs.
 With the given BPN the consumer can search for EDCs at the EDC Discovery according to this BPN.
 
 ### Overall-View
@@ -47,4 +47,10 @@ with the BPN, if it is in its database.
 
 -   The BPN Discovery must be managed centralized.
 
--   Keycloak as an OAuth2 compliant authorization is needed to manage the identity of and access of the user.
+-   Keycloak as an OAuth2 compliant authorization is needed to manage the identity and access of the user.
+
+#### Legal Notice
+* SPDX-License-Identifier: CC-BY-4.0
+* Licence Path: https://creativecommons.org/licenses/by/4.0/legalcode
+* Copyright statements
+* Source URL: https://github.com/eclipse-tractusx/sldt-bpn-discovery

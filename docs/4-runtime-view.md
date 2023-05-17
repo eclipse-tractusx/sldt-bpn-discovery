@@ -96,3 +96,9 @@
 
 6.  BPNDiscoveryService calls BPNDiscoveryRepository to delete the entry
     from the database.
+
+#### Legal Notice
+* SPDX-License-Identifier: CC-BY-4.0
+* Licence Path: https://creativecommons.org/licenses/by/4.0/legalcode
+* Copyright statements
+* Source URL: https://github.com/eclipse-tractusx/sldt-bpn-discovery

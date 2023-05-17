@@ -22,3 +22,9 @@
 | Data Provider    | Requests for register or delete entries from BPN Discovery               |
 | Discovery Finder | Receives request from BPN Discovey of self-registration purpose          |
 | Keycloak         | Generates token for users and provides id management of user and service |
+
+#### Legal Notice
+* SPDX-License-Identifier: CC-BY-4.0
+* Licence Path: https://creativecommons.org/licenses/by/4.0/legalcode
+* Copyright statements
+* Source URL: https://github.com/eclipse-tractusx/sldt-bpn-discovery
