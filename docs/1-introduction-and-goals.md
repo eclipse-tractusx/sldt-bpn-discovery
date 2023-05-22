@@ -31,9 +31,3 @@ The BPN Discovery is used to find according BPNs for a given type / key combinat
 | Consumer         | uses a BPN Discovery                                     | wants to find a BPN                                  |
 | Data Provider    | registers his keys of a specific type in a BPN Discovery | wants that his EDC / Digital Twin can be found       |
 | Catena-X network | provides the environment and operates the services       | to enable the companies to connect and exchange data |
-
-#### Legal Notice
-* SPDX-License-Identifier: CC-BY-4.0
-* Licence Path: https://creativecommons.org/licenses/by/4.0/legalcode
-* Copyright statements
-* Source URL: https://github.com/eclipse-tractusx/sldt-bpn-discovery

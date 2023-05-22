@@ -48,9 +48,3 @@ with the BPN, if it is in its database.
 -   The BPN Discovery must be managed centralized.
 
 -   Keycloak as an OAuth2 compliant authorization is needed to manage the identity and access of the user.
-
-#### Legal Notice
-* SPDX-License-Identifier: CC-BY-4.0
-* Licence Path: https://creativecommons.org/licenses/by/4.0/legalcode
-* Copyright statements
-* Source URL: https://github.com/eclipse-tractusx/sldt-bpn-discovery
