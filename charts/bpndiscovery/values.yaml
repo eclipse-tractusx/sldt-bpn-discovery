@@ -21,8 +21,8 @@ enablePostgres: true
 
 bpndiscovery:
   image:
-    registry: ghcr.io/catenax-ng
-    repository: sldt-bpn-discovery
+    registry: docker.io
+    repository: tractusx/sldt-bpn-discovery
     version: ""
     imagePullPolicy: IfNotPresent
   replicaCount: 1
@@ -47,6 +47,7 @@ bpndiscovery:
       clientId: default-discovery-finder-client
       clientSecret: ""
       authorizationGrantType: client_credentials
+    schedulerCronFrequency: "0 0 */1 * * *"
     provider:
       tokenUri: ""
   service:
