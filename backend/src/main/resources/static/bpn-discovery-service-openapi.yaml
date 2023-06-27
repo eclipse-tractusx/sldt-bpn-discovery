@@ -177,6 +177,7 @@ components:
         bpns:
           title: bpns
           type: array
+          maxItems: 10000
           items:
             $ref: '#/components/schemas/Bpn'
     Bpn:
