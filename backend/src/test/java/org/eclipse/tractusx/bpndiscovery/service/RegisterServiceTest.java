@@ -75,6 +75,7 @@ public class RegisterServiceTest extends AbstractDiscoveryFinderClientTest {
       wireMockServer.verify( 0, deleteRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/" ) ) );
       wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/search" ) ) );
       wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery" ) ) );
+      assertThat( output ).contains( "The service has been successfully registered!" );
    }
 
    @Test
