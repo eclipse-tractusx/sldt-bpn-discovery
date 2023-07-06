@@ -37,7 +37,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 public class RegisterServiceTest extends AbstractDiscoveryFinderClientTest {
 
    @Test
-   public void givenValidData_alreadyRegisteredService_registerOnStartup_thenSuccess() throws JsonProcessingException {
+   public void givenValidData_alreadyRegisteredService_registerOnStartup_thenSuccess(CapturedOutput output) throws JsonProcessingException {
       // given
       DiscoveryEndpoint givenDiscoveryEndpoint = applicationDiscoveryEndpoint();
       DiscoveryEndpointCollection givenDiscoveryCollection = new DiscoveryEndpointCollection( List.of( givenDiscoveryEndpoint ) );
@@ -55,10 +55,11 @@ public class RegisterServiceTest extends AbstractDiscoveryFinderClientTest {
       wireMockServer.verify( 1, deleteRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/" + givenDiscoveryEndpoint.getResourceId() ) ) );
       wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery" ) ) );
       wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/search" ) ) );
+      assertThat( output ).contains( "The service has been successfully registered!" );
    }
 
    @Test
-   public void givenValidData_service_Not_Registered_registerOnStartup_thenSuccess() throws JsonProcessingException {
+   public void givenValidData_service_Not_Registered_registerOnStartup_thenSuccess(CapturedOutput output) throws JsonProcessingException {
       //given
       DiscoveryEndpoint givenDiscoveryEndpoint = applicationDiscoveryEndpoint();
 
@@ -74,6 +75,7 @@ public class RegisterServiceTest extends AbstractDiscoveryFinderClientTest {
       wireMockServer.verify( 0, deleteRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/" ) ) );
       wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/search" ) ) );
       wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery" ) ) );
+      assertThat( output ).contains( "The service has been successfully registered!" );
    }
 
    @Test
