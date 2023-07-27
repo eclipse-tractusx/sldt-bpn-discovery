@@ -21,8 +21,8 @@ name: bpndiscovery
 description: Tractus-X BPN Discovery Helm Chart
 
 type: application
-version: 0.1.4
-appVersion: 0.2.1-M1
+version: 0.1.5
+appVersion: 0.2.2-M1
 
 dependencies:
   - repository: https://charts.bitnami.com/bitnami
