@@ -57,6 +57,8 @@ public class RegisterService {
                discoveryFinderClientService.deleteDiscoveryEndpoint( isEntryExisting.get().getResourceId() );
             }
             discoveryFinderClientService.addDiscoveryEndpoint( createDiscoveryEndpointRequest( type ) );
+            log.info( "The service has been successfully registered!" );
+
          } catch ( WebClientResponseException.BadRequest badRequestEx ) {
             log.error( "Validation failed or this entry already exists! " + badRequestEx.getMessage(), badRequestEx.getCause() );
          } catch ( WebClientResponseException.NotFound notFoundEx ) {
