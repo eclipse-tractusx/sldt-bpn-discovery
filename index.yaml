@@ -2,6 +2,21 @@ apiVersion: v1
 entries:
   bpndiscovery:
   - apiVersion: v2
+    appVersion: 0.2.2-M1
+    created: "2023-07-27T13:13:14.662909548Z"
+    dependencies:
+    - condition: enablePostgres
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.2.3
+    description: Tractus-X BPN Discovery Helm Chart
+    digest: 6c7f44730d6b1e08adb51860275b654ac275fb8d4524d913e4032b9b0946e193
+    name: bpndiscovery
+    type: application
+    urls:
+    - https://github.com/eclipse-tractusx/sldt-bpn-discovery/releases/download/bpndiscovery-0.1.5/bpndiscovery-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
     appVersion: 0.2.1-M1
     created: "2023-06-20T11:46:17.076095409Z"
     dependencies:
@@ -76,4 +91,4 @@ entries:
     urls:
     - https://github.com/eclipse-tractusx/sldt-bpn-discovery/releases/download/bpndiscovery-0.1.0/bpndiscovery-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-20T11:46:17.076155409Z"
+generated: "2023-07-27T13:13:14.662934552Z"
