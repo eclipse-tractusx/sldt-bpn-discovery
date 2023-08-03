@@ -1,0 +1,6 @@
+product: "sldt-bpn-discovery"
+leadingRepository: "sldt-bpn-discovery"
+repositories:
+  - name: "sldt-bpn-discovery"
+    usage: "This repository contains the source code for the SLDT BPN Discovery"
+    url: "https://github.com/eclipse-tractusx/sldt-bpn-discovery.git"
