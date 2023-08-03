@@ -190,3 +190,14 @@ If only search requests are made the view role is sufficient.
 The BPN Discovery registers itself at the Discovery Finder service when
 it starts. Therefore, the BPN Discovery has a technical user for the
 Discovery Finder.
+
+
+
+### NOTICE
+
+This work is licensed under the [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+- SPDX-License-Identifier: Apache-2.0
+- SPDX-FileCopyrightText: 2023 Robert Bosch Manufacturing Solutions GmbH
+- SPDX-FileCopyrightText: 2023 Contributors to the Eclipse Foundation
+- Source URL: https://github.com/eclipse-tractusx/sldt-bpn-discovery.git

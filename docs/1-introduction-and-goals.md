@@ -31,3 +31,13 @@ The BPN Discovery is used to find according BPNs for a given type / key combinat
 | Consumer         | uses a BPN Discovery                                     | wants to find a BPN                                  |
 | Data Provider    | registers his keys of a specific type in a BPN Discovery | wants that his EDC / Digital Twin can be found       |
 | Catena-X network | provides the environment and operates the services       | to enable the companies to connect and exchange data |
+
+
+### NOTICE
+
+This work is licensed under the [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+- SPDX-License-Identifier: Apache-2.0
+- SPDX-FileCopyrightText: 2023 Robert Bosch Manufacturing Solutions GmbH
+- SPDX-FileCopyrightText: 2023 Contributors to the Eclipse Foundation
+- Source URL: https://github.com/eclipse-tractusx/sldt-bpn-discovery.git
