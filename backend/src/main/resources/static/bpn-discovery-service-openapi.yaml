@@ -138,6 +138,7 @@ components:
   schemas:
     IdentifierTypeKeyPair:
       title: IdentifierTypeKeyPair
+      type: object
       required:
         - type
         - key
@@ -161,6 +162,7 @@ components:
             $ref: '#/components/schemas/SearchIdentifierTypeKeyPair'
     SearchIdentifierTypeKeyPair:
       title: SearchIdentifierTypeKeyPair
+      type: object
       properties:
         type:
           type: string
@@ -182,6 +184,7 @@ components:
             $ref: '#/components/schemas/Bpn'
     Bpn:
       title: Bpn
+      type: object
       required:
         - type
         - key
