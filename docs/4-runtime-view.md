@@ -96,3 +96,14 @@
 
 6.  BPNDiscoveryService calls BPNDiscoveryRepository to delete the entry
     from the database.
+
+
+
+### NOTICE
+
+This work is licensed under the [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+- SPDX-License-Identifier: Apache-2.0
+- SPDX-FileCopyrightText: 2023 Robert Bosch Manufacturing Solutions GmbH
+- SPDX-FileCopyrightText: 2023 Contributors to the Eclipse Foundation
+- Source URL: https://github.com/eclipse-tractusx/sldt-bpn-discovery.git
