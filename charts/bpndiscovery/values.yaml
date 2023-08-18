@@ -75,9 +75,11 @@ bpndiscovery:
       nginx.ingress.kubernetes.io/x-forwarded-prefix: /bpndiscovery
   resources:
     limits:
-      memory: "1024Mi"
+      cpu: 750m
+      memory: 1024Mi
     requests:
-      memory: "512Mi"
+      cpu: 750m
+      memory: 1024Mi
 
 postgresql:
   primary:

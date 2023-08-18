@@ -19,10 +19,13 @@
 apiVersion: v2
 name: bpndiscovery
 description: Tractus-X BPN Discovery Helm Chart
+home: https://eclipse-tractusx.github.io/
+sources:
+  - https://github.com/eclipse-tractusx/sldt-bpn-discovery
 
 type: application
-version: 0.1.6
-appVersion: 0.2.3-M1
+version: 0.1.7
+appVersion: 0.2.4-M1
 
 dependencies:
   - repository: https://charts.bitnami.com/bitnami
