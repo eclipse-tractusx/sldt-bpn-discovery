@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2023-08-20T22:34:01.474Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15" etag="sb-N_RDqJGHkhFyqShId" version="21.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-22T14:00:47.083Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15" etag="mLKee2Po-6p7XJgtQ9jh" version="21.6.8" type="github">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
-    <mxGraphModel dx="2876" dy="1954" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2366" dy="1541" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="7baba1c4bc27f4b0-4" value="BPN Discovery 1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+        <mxCell id="7baba1c4bc27f4b0-4" value="BPN Discovery 1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#FF9999;" parent="1" vertex="1">
           <mxGeometry x="540" y="80" width="100" height="870" as="geometry" />
         </mxCell>
         <mxCell id="q9l-MDPdD40MSJEn-up7-77" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.9;entryY=0.519;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.1;exitY=0.759;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="7baba1c4bc27f4b0-4">
@@ -19,7 +19,7 @@
             <mxPoint x="-31" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="7baba1c4bc27f4b0-5" value="BPN Discovery 2" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+        <mxCell id="7baba1c4bc27f4b0-5" value="BPN Discovery 2" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#FF9999;" parent="1" vertex="1">
           <mxGeometry x="680" y="80" width="100" height="860" as="geometry" />
         </mxCell>
         <mxCell id="q9l-MDPdD40MSJEn-up7-57" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="7baba1c4bc27f4b0-5">
@@ -36,7 +36,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="7baba1c4bc27f4b0-6" value="BPN Discovery 3" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+        <mxCell id="7baba1c4bc27f4b0-6" value="BPN Discovery 3" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#FF9999;" parent="1" vertex="1">
           <mxGeometry x="820" y="80" width="100" height="860" as="geometry" />
         </mxCell>
         <mxCell id="q9l-MDPdD40MSJEn-up7-64" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.3;exitY=0.019;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="7baba1c4bc27f4b0-6" target="7baba1c4bc27f4b0-7">
@@ -50,7 +50,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="7baba1c4bc27f4b0-7" value="Dataspace Discovery Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+        <mxCell id="7baba1c4bc27f4b0-7" value="Dataspace Discovery Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#FF9999;" parent="1" vertex="1">
           <mxGeometry x="1090" y="80" width="100" height="870" as="geometry" />
         </mxCell>
         <mxCell id="q9l-MDPdD40MSJEn-up7-66" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="7baba1c4bc27f4b0-7">
@@ -76,10 +76,10 @@
         <mxCell id="7baba1c4bc27f4b0-45" value="1 Mio&lt;br&gt;Manufacturer Part Number (MPN)" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
           <mxGeometry x="820" width="100" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="F-69Bmwsysw-YoAs_LHj-1" value="&lt;h1&gt;Decentralized Digital Twin Registry&lt;/h1&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Scenario 3: Discover and Request Digital Twin&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="101" y="-120" width="640" height="120" as="geometry" />
+        <mxCell id="F-69Bmwsysw-YoAs_LHj-1" value="&lt;h1&gt;Decentralized Digital Twin Registry (Enablement Services)&lt;/h1&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Scenario 3: Discover and Request Digital Twin&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-100" y="-130" width="720" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="F-69Bmwsysw-YoAs_LHj-3" value="BPN Discover Finder" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+        <mxCell id="F-69Bmwsysw-YoAs_LHj-3" value="BPN Discover Finder" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#FF9999;" parent="1" vertex="1">
           <mxGeometry x="960" y="80" width="100" height="870" as="geometry" />
         </mxCell>
         <mxCell id="q9l-MDPdD40MSJEn-up7-53" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="F-69Bmwsysw-YoAs_LHj-3">
@@ -96,7 +96,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="q9l-MDPdD40MSJEn-up7-22" value="EDC Provider&amp;nbsp;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+        <mxCell id="q9l-MDPdD40MSJEn-up7-22" value="EDC Provider&amp;nbsp;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#B3FF66;" vertex="1" parent="1">
           <mxGeometry x="-100" y="90" width="100" height="840" as="geometry" />
         </mxCell>
         <mxCell id="q9l-MDPdD40MSJEn-up7-23" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="q9l-MDPdD40MSJEn-up7-22">
@@ -116,13 +116,13 @@
             <mxPoint x="681" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="q9l-MDPdD40MSJEn-up7-24" value="App Provider" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+        <mxCell id="q9l-MDPdD40MSJEn-up7-24" value="App Provider" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="60" y="90" width="100" height="850" as="geometry" />
         </mxCell>
         <mxCell id="q9l-MDPdD40MSJEn-up7-25" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="q9l-MDPdD40MSJEn-up7-24">
           <mxGeometry x="45" y="500" width="10" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="q9l-MDPdD40MSJEn-up7-26" value="Submodel Server Provider" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+        <mxCell id="q9l-MDPdD40MSJEn-up7-26" value="Submodel Server Provider" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#CCFF99;" vertex="1" parent="1">
           <mxGeometry x="200" y="90" width="100" height="850" as="geometry" />
         </mxCell>
         <mxCell id="q9l-MDPdD40MSJEn-up7-27" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="q9l-MDPdD40MSJEn-up7-26">
@@ -131,7 +131,7 @@
         <mxCell id="q9l-MDPdD40MSJEn-up7-89" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="q9l-MDPdD40MSJEn-up7-26">
           <mxGeometry x="45" y="750" width="10" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="q9l-MDPdD40MSJEn-up7-29" value="DTR Provider" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+        <mxCell id="q9l-MDPdD40MSJEn-up7-29" value="DTR Provider" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#B3FF66;" vertex="1" parent="1">
           <mxGeometry x="340" y="90" width="100" height="850" as="geometry" />
         </mxCell>
         <mxCell id="q9l-MDPdD40MSJEn-up7-30" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="q9l-MDPdD40MSJEn-up7-29">
@@ -298,6 +298,12 @@
         </mxCell>
         <mxCell id="q9l-MDPdD40MSJEn-up7-94" value="Contract offer with link to the DTR" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
           <mxGeometry x="-150" y="400" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="q9l-MDPdD40MSJEn-up7-95" value="Enablement Services" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFF99;" vertex="1" parent="1">
+          <mxGeometry x="605" y="-120" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="q9l-MDPdD40MSJEn-up7-96" value="Core Services" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF6666;" vertex="1" parent="1">
+          <mxGeometry x="735" y="-120" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
