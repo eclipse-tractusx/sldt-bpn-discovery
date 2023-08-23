@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-08-22T14:00:47.083Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15" etag="mLKee2Po-6p7XJgtQ9jh" version="21.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-23T06:41:21.151Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15" etag="P_xGLV2SkAdCmJOQ3MeS" version="21.6.8" type="github">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="2366" dy="1541" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -73,7 +73,7 @@
         <mxCell id="7baba1c4bc27f4b0-44" value="not supported&lt;br&gt;Original equipment number (OEN)" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
           <mxGeometry x="680" width="100" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="7baba1c4bc27f4b0-45" value="1 Mio&lt;br&gt;Manufacturer Part Number (MPN)" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
+        <mxCell id="7baba1c4bc27f4b0-45" value="50.000&lt;br&gt;Manufacturer Part Number (MPN)" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
           <mxGeometry x="820" width="100" height="65" as="geometry" />
         </mxCell>
         <mxCell id="F-69Bmwsysw-YoAs_LHj-1" value="&lt;h1&gt;Decentralized Digital Twin Registry (Enablement Services)&lt;/h1&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Scenario 3: Discover and Request Digital Twin&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
