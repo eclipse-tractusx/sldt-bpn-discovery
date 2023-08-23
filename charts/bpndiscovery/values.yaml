@@ -29,27 +29,27 @@ bpndiscovery:
   containerPort: 4243
   host: localhost
   ## If 'authentication' is set to false, no OAuth authentication is enforced
-  authentication: true
+  authentication: false
   idp:
-    issuerUri: ""
-    publicClientId: default-client
+    issuerUri: "https://idp-url"
+    publicClientId: idpClientID
     bpnIdClaimName: bpn
   ## Needed for the self-registration on discovery-finder
   bpndiscoveryEndpoint:
     allowedTypes: oen,wmi
-    description: ""
-    endpointAddress: ""
-    documentation: ""
+    description: "bpndiscovery"
+    endpointAddress: "/bpndiscovery"
+    documentation: "/bpndiscovery/swagger/index.html"
   ## Configure discoveryFinderClient to register the bpn-discovery on discovery-finder.Properties needed for spring-security config.
   discoveryfinderClient:
-    baseUrl: ""
+    baseUrl: "/discoveryfinder"
     registration:
-      clientId: default-discovery-finder-client
-      clientSecret: ""
+      clientId: discovery-finder-client
+      clientSecret: "client-secret"
       authorizationGrantType: client_credentials
     schedulerCronFrequency: "0 0 */1 * * *"
     provider:
-      tokenUri: ""
+      tokenUri: "/realms/discovery/protocol/openid-connect/token"
   service:
     port: 8080
     type: ClusterIP
@@ -78,7 +78,7 @@ bpndiscovery:
       cpu: 750m
       memory: 1024Mi
     requests:
-      cpu: 750m
+      cpu: 250m
       memory: 1024Mi
 
 postgresql:
