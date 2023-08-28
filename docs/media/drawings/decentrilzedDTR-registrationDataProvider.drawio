@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-08-28T12:47:49.470Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15" etag="XAy3OCLmFUX1dZQ85oXX" version="21.6.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-28T15:42:27.070Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15" etag="kbtHONGp1VMuCABTF13H" version="21.6.9" type="github">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
-    <mxGraphModel dx="1489" dy="1663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1266" dy="1541" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -32,7 +32,7 @@
         <mxCell id="7baba1c4bc27f4b0-5" value="BPN Discovery 2" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#FF9999;" parent="1" vertex="1">
           <mxGeometry x="680" y="80" width="100" height="580" as="geometry" />
         </mxCell>
-        <mxCell id="Gci9yLwvQkhO6unXlzPl-11" value="self-register endpoint" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=horizontal;" edge="1" parent="7baba1c4bc27f4b0-5">
+        <mxCell id="Gci9yLwvQkhO6unXlzPl-11" value="self-register endpoint" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=horizontal;" parent="7baba1c4bc27f4b0-5" edge="1">
           <mxGeometry x="-0.1486" relative="1" as="geometry">
             <mxPoint x="-90" y="100.06" as="sourcePoint" />
             <Array as="points">
@@ -48,10 +48,10 @@
         <mxCell id="7baba1c4bc27f4b0-7" value="Dataspace Discovery Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#FF9999;" parent="1" vertex="1">
           <mxGeometry x="960" y="80" width="100" height="580" as="geometry" />
         </mxCell>
-        <mxCell id="Gci9yLwvQkhO6unXlzPl-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="7baba1c4bc27f4b0-7">
+        <mxCell id="Gci9yLwvQkhO6unXlzPl-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="7baba1c4bc27f4b0-7" vertex="1">
           <mxGeometry x="40" y="320" width="10" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Gci9yLwvQkhO6unXlzPl-12" value="self-register endpoint" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=horizontal;" edge="1" parent="7baba1c4bc27f4b0-7">
+        <mxCell id="Gci9yLwvQkhO6unXlzPl-12" value="self-register endpoint" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=horizontal;" parent="7baba1c4bc27f4b0-7" edge="1">
           <mxGeometry x="-0.1486" relative="1" as="geometry">
             <mxPoint x="-230.33333333333326" y="120" as="sourcePoint" />
             <Array as="points">
@@ -61,7 +61,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Gci9yLwvQkhO6unXlzPl-13" value="self-register endpoint" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=horizontal;" edge="1" parent="7baba1c4bc27f4b0-7">
+        <mxCell id="Gci9yLwvQkhO6unXlzPl-13" value="self-register endpoint" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=horizontal;" parent="7baba1c4bc27f4b0-7" edge="1">
           <mxGeometry x="-0.1486" relative="1" as="geometry">
             <mxPoint x="-91" y="140.06" as="sourcePoint" />
             <Array as="points">
@@ -126,7 +126,7 @@
             <mxPoint x="-100" y="340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Gci9yLwvQkhO6unXlzPl-1" value="return BPN" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;entryX=0.9;entryY=0.9;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="F-69Bmwsysw-YoAs_LHj-3" target="F-69Bmwsysw-YoAs_LHj-4">
+        <mxCell id="Gci9yLwvQkhO6unXlzPl-1" value="return BPN" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;entryX=0.9;entryY=0.9;entryDx=0;entryDy=0;entryPerimeter=0;" parent="F-69Bmwsysw-YoAs_LHj-3" target="F-69Bmwsysw-YoAs_LHj-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="165" y="340" as="sourcePoint" />
             <mxPoint x="85" y="340" as="targetPoint" />
@@ -184,13 +184,13 @@
         <mxCell id="9PgZraaCn6j2YhGHZMRW-12" value="Core Services" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF6666;" parent="1" vertex="1">
           <mxGeometry x="930" y="-200" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Gci9yLwvQkhO6unXlzPl-4" value="Discovery Finder" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#FF9999;" vertex="1" parent="1">
+        <mxCell id="Gci9yLwvQkhO6unXlzPl-4" value="Discovery Finder" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;fillColor=#FF9999;" parent="1" vertex="1">
           <mxGeometry x="1350" y="80" width="100" height="580" as="geometry" />
         </mxCell>
-        <mxCell id="Gci9yLwvQkhO6unXlzPl-9" value="&lt;p style=&quot;margin: 0in; font-family: Calibri; font-size: 11pt;&quot; lang=&quot;de&quot;&gt;Registered 4 endpoints:&lt;/p&gt;&lt;p style=&quot;margin: 0in; font-family: Calibri; font-size: 11pt;&quot; lang=&quot;de&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0in; font-family: Calibri; font-size: 11pt;&quot; lang=&quot;de&quot;&gt;BPN Discover 1-n&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color); margin: 0in; font-family: Calibri; font-size: 11pt;&quot; lang=&quot;de&quot;&gt;Dataspace Discovery Service&lt;/p&gt;" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+        <mxCell id="Gci9yLwvQkhO6unXlzPl-9" value="&lt;p style=&quot;margin: 0in; font-family: Calibri; font-size: 11pt;&quot; lang=&quot;de&quot;&gt;Registered 4 endpoints:&lt;/p&gt;&lt;p style=&quot;margin: 0in; font-family: Calibri; font-size: 11pt;&quot; lang=&quot;de&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0in; font-family: Calibri; font-size: 11pt;&quot; lang=&quot;de&quot;&gt;BPN Discover 1-n&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color); margin: 0in; font-family: Calibri; font-size: 11pt;&quot; lang=&quot;de&quot;&gt;Dataspace Discovery Service&lt;/p&gt;" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
           <mxGeometry x="1340" y="-70" width="120" height="135" as="geometry" />
         </mxCell>
-        <mxCell id="Gci9yLwvQkhO6unXlzPl-8" value="self-register endpoint" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=horizontal;" edge="1" parent="1">
+        <mxCell id="Gci9yLwvQkhO6unXlzPl-8" value="self-register endpoint" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=horizontal;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1010" y="240.06" as="sourcePoint" />
             <Array as="points" />
