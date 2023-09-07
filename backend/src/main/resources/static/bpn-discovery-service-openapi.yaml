@@ -29,9 +29,31 @@ info:
 security:
   - CatenaXOpenId:
       - profile
-
+servers:
+  - url: "{protocol}://{host_name}:{port}/api/{version_prefix}"
+    variables:
+      protocol:
+        description: Allows access through http and https (recommended)
+        default: https
+        enum:
+          - http
+          - https
+      host_name:
+        description: Hostname of server hosting the api
+        default: localhost
+      port:
+        description: "80 is default for http, 443 for https"
+        default: "443"
+        enum:
+          - "80"
+          - "443"
+          - "4243"
+      version_prefix:
+        default: v1.0
+        enum:
+          - v1.0
 paths:
-  /api/administration/connectors/bpnDiscovery:
+  /administration/connectors/bpnDiscovery:
     post:
       tags:
         - Discovery
@@ -57,7 +79,7 @@ paths:
               examples:
                 complete:
                   $ref: '#/components/examples/bpn-result'
-  /api/administration/connectors/bpnDiscovery/batch:
+  /administration/connectors/bpnDiscovery/batch:
     post:
       tags:
         - Discovery
@@ -89,7 +111,7 @@ paths:
               examples:
                 complete:
                   $ref: '#/components/examples/identifier-type-key-pair-batch-result'
-  /api/administration/connectors/bpnDiscovery/search:
+  /administration/connectors/bpnDiscovery/search:
     post:
       tags:
         - Discovery
@@ -116,7 +138,7 @@ paths:
                 complete:
                   $ref: '#/components/examples/search-filter-result'
 
-  /api/administration/connectors/bpnDiscovery/{resourceId}:
+  /administration/connectors/bpnDiscovery/{resourceId}:
     delete:
       tags:
         - Discovery

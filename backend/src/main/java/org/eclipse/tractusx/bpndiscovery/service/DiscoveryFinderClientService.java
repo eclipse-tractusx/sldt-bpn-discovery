@@ -35,7 +35,7 @@ public class DiscoveryFinderClientService {
    }
 
    public DiscoveryEndpointCollection searchEntries( SearchRequest searchRequest ) {
-      return webClient.post().uri( "/api/administration/connectors/discovery/search" )
+      return webClient.post().uri( "/api/v1.0/administration/connectors/discovery/search" )
             .contentType( MediaType.APPLICATION_JSON )
             .accept( MediaType.APPLICATION_JSON )
             .bodyValue( searchRequest )
@@ -45,7 +45,7 @@ public class DiscoveryFinderClientService {
    }
 
    public DiscoveryEndpoint addDiscoveryEndpoint( DiscoveryEndpoint discoveryEndpoint ) {
-      return webClient.post().uri( "/api/administration/connectors/discovery" )
+      return webClient.post().uri( "/api/v1.0/administration/connectors/discovery" )
             .contentType( MediaType.APPLICATION_JSON )
             .accept( MediaType.APPLICATION_JSON )
             .bodyValue( discoveryEndpoint )
@@ -55,7 +55,7 @@ public class DiscoveryFinderClientService {
    }
 
    public void deleteDiscoveryEndpoint( String resourceId ) {
-      webClient.delete().uri( "/api/administration/connectors/discovery/" + resourceId )
+      webClient.delete().uri( "/api/v1.0/administration/connectors/discovery/" + resourceId )
             .accept( MediaType.APPLICATION_JSON )
             .retrieve()
             .toBodilessEntity()
