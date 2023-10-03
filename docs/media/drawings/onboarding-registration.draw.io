@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-09-19T14:28:34.051Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/117.0" etag="3SZXpKtQbPAwmtp5UQqc" version="21.7.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-03T07:51:53.046Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="uDKdpI53Mgy_M2GXWgDp" version="21.8.0" type="github">
   <diagram name="Seite-1" id="xKnN4ZHrS10Ob_aHEZOJ">
-    <mxGraphModel dx="1242" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2967" dy="1661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -163,22 +163,17 @@
         <mxCell id="yTCr8bQdOqjygj6dUeAG-96" value="MIW Generates Wallet for BPN" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-98" vertex="1">
           <mxGeometry x="1044" y="30" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="64A1k_Dh1uGcnGidKPN--3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="yTCr8bQdOqjygj6dUeAG-98" source="yTCr8bQdOqjygj6dUeAG-96" target="64A1k_Dh1uGcnGidKPN--2" edge="1">
+        <mxCell id="64A1k_Dh1uGcnGidKPN--3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="yTCr8bQdOqjygj6dUeAG-98" source="yTCr8bQdOqjygj6dUeAG-96" target="64A1k_Dh1uGcnGidKPN--4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1363.9999999999995" y="60" as="sourcePoint" />
+            <mxPoint x="1220" y="60" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="64A1k_Dh1uGcnGidKPN--5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="yTCr8bQdOqjygj6dUeAG-98" source="64A1k_Dh1uGcnGidKPN--2" target="64A1k_Dh1uGcnGidKPN--4" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="64A1k_Dh1uGcnGidKPN--2" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Register Revocation List for DID&lt;br&gt;&lt;/span&gt;&lt;font color=&quot;#ff3333&quot;&gt;&lt;span style=&quot;font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;(there is no revocation list for DID to be clarified)&lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-98" vertex="1">
-          <mxGeometry x="1220" y="30" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="64A1k_Dh1uGcnGidKPN--7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="yTCr8bQdOqjygj6dUeAG-98" source="64A1k_Dh1uGcnGidKPN--4" target="64A1k_Dh1uGcnGidKPN--6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="64A1k_Dh1uGcnGidKPN--4" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Create Membership + BPN Credential + DID-Document&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-98" vertex="1">
-          <mxGeometry x="1380" y="30" width="120" height="60" as="geometry" />
+          <mxGeometry x="1310" y="30" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="64A1k_Dh1uGcnGidKPN--6" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Response with DID&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-98" vertex="1">
           <mxGeometry x="1580" y="30" width="120" height="60" as="geometry" />
@@ -250,7 +245,7 @@
         <mxCell id="64A1k_Dh1uGcnGidKPN--16" value="Start Legal Person SD-Creation" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-125" vertex="1">
           <mxGeometry x="2039" y="40" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="64A1k_Dh1uGcnGidKPN--33" value="Store part of SD in MIW&lt;br&gt;&lt;font color=&quot;#ff3333&quot;&gt;(what does part of SD mean?)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-125" vertex="1">
+        <mxCell id="64A1k_Dh1uGcnGidKPN--33" value="Recieve Compliance Credential" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-125" vertex="1">
           <mxGeometry x="2874" y="30" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="64A1k_Dh1uGcnGidKPN--42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="yTCr8bQdOqjygj6dUeAG-125" source="64A1k_Dh1uGcnGidKPN--39" target="64A1k_Dh1uGcnGidKPN--41" edge="1">
@@ -292,7 +287,7 @@
         <mxCell id="64A1k_Dh1uGcnGidKPN--21" value="Sign Customer SD with Issuer Wallet" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-145" vertex="1">
           <mxGeometry x="2399" y="20" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="64A1k_Dh1uGcnGidKPN--35" value="Store part of SD in MIW" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-145" vertex="1">
+        <mxCell id="64A1k_Dh1uGcnGidKPN--35" value="Store Compliance Credential in MIW" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-145" vertex="1">
           <mxGeometry x="3074" y="20" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="yTCr8bQdOqjygj6dUeAG-144" value="&lt;b&gt;Self-Description Factory&lt;/b&gt;" style="swimlane;html=1;startSize=29;fontStyle=0;collapsible=0;horizontal=0;swimlaneLine=1;swimlaneFillColor=none;strokeWidth=2;whiteSpace=wrap;strokeColor=default;" parent="yTCr8bQdOqjygj6dUeAG-124" vertex="1">
@@ -379,7 +374,7 @@
         <mxCell id="64A1k_Dh1uGcnGidKPN--26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="yTCr8bQdOqjygj6dUeAG-156" source="64A1k_Dh1uGcnGidKPN--23" target="64A1k_Dh1uGcnGidKPN--25" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="64A1k_Dh1uGcnGidKPN--23" value="&lt;div&gt;Start GXDCH Process&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ff3333&quot;&gt;(what is GXDCH?)&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-156" vertex="1">
+        <mxCell id="64A1k_Dh1uGcnGidKPN--23" value="&lt;div&gt;Start Gaia-X Digital Clearing House Process&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=#ffffff;" parent="yTCr8bQdOqjygj6dUeAG-156" vertex="1">
           <mxGeometry x="2539" y="30" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="64A1k_Dh1uGcnGidKPN--30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="yTCr8bQdOqjygj6dUeAG-156" source="64A1k_Dh1uGcnGidKPN--25" target="64A1k_Dh1uGcnGidKPN--29" edge="1">
