@@ -52,9 +52,9 @@ public class RegisterServiceTest extends AbstractDiscoveryFinderClientTest {
       registerService.registerAfterStartup();
 
       // then
-      wireMockServer.verify( 1, deleteRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/" + givenDiscoveryEndpoint.getResourceId() ) ) );
-      wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery" ) ) );
-      wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/search" ) ) );
+      wireMockServer.verify( 1, deleteRequestedFor( urlEqualTo( "/api/v1.0/administration/connectors/discovery/" + givenDiscoveryEndpoint.getResourceId() ) ) );
+      wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/v1.0/administration/connectors/discovery" ) ) );
+      wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/v1.0/administration/connectors/discovery/search" ) ) );
       assertThat( output ).contains( "The service has been successfully registered!" );
    }
 
@@ -72,9 +72,9 @@ public class RegisterServiceTest extends AbstractDiscoveryFinderClientTest {
       registerService.registerAfterStartup();
 
       // then
-      wireMockServer.verify( 0, deleteRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/" ) ) );
-      wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/search" ) ) );
-      wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery" ) ) );
+      wireMockServer.verify( 0, deleteRequestedFor( urlEqualTo( "/api/v1.0/administration/connectors/discovery/" ) ) );
+      wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/v1.0/administration/connectors/discovery/search" ) ) );
+      wireMockServer.verify( 1, postRequestedFor( urlEqualTo( "/api/v1.0/administration/connectors/discovery" ) ) );
       assertThat( output ).contains( "The service has been successfully registered!" );
    }
 
@@ -88,7 +88,7 @@ public class RegisterServiceTest extends AbstractDiscoveryFinderClientTest {
       // add wiremock stubs
       addStubForAuthorization();
       addStubForSearch( givenDiscoveryCollection );
-      wireMockServer.stubFor( delete( "/api/administration/connectors/discovery/" + givenDiscoveryEndpoint.getResourceId() )
+      wireMockServer.stubFor( delete( "/api/v1.0/administration/connectors/discovery/" + givenDiscoveryEndpoint.getResourceId() )
             .willReturn( aResponse().withStatus( 404 ) ) );
 
       // when
@@ -108,7 +108,7 @@ public class RegisterServiceTest extends AbstractDiscoveryFinderClientTest {
       // add wiremock stubs
       addStubForAuthorization();
       addStubForSearch( givenDiscoveryCollection );
-      wireMockServer.stubFor( delete( "/api/administration/connectors/discovery/" + applicationDiscoveryEndpoint().getResourceId() )
+      wireMockServer.stubFor( delete( "/api/v1.0/administration/connectors/discovery/" + applicationDiscoveryEndpoint().getResourceId() )
             .willReturn( aResponse().withStatus( 400 ) ) );
 
       // when
@@ -148,7 +148,7 @@ public class RegisterServiceTest extends AbstractDiscoveryFinderClientTest {
    public void givenDiscoveryFinderIsDown_whenRegisterOnStartup_thenWebClientRequestException( CapturedOutput output ) {
       //given -> add wiremock stubs
       addStubForAuthorization();
-      wireMockServer.stubFor( post( "/api/administration/connectors/discovery/search" )
+      wireMockServer.stubFor( post( "/api/v1.0/administration/connectors/discovery/search" )
             .willReturn( aResponse().withStatus( 500 ) ) );
 
       // when

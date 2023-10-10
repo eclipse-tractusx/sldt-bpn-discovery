@@ -51,16 +51,16 @@ public class OAuthConfig {
 
                   .requestMatchers( HttpMethod.GET, "/**" ).permitAll()
 
-                  .requestMatchers( HttpMethod.POST, "/api/administration/connectors/bpnDiscovery/batch" )
+                  .requestMatchers( HttpMethod.POST, "/api/v1.0/administration/connectors/bpnDiscovery/batch" )
                   .hasRole( JwtRoles.ADD.getRole() )
 
-                  .requestMatchers( HttpMethod.POST, "/api/administration/connectors/bpnDiscovery/search" )
+                  .requestMatchers( HttpMethod.POST, "/api/v1.0/administration/connectors/bpnDiscovery/search" )
                   .hasRole( JwtRoles.VIEW.getRole() )
 
-                  .requestMatchers( HttpMethod.DELETE, "/api/administration/connectors/bpnDiscovery/**" )
+                  .requestMatchers( HttpMethod.DELETE, "/api/v1.0/administration/connectors/bpnDiscovery/**" )
                   .hasRole( JwtRoles.DELETE.getRole() )
 
-                  .requestMatchers( HttpMethod.POST, "/api/administration/connectors/bpnDiscovery" )
+                  .requestMatchers( HttpMethod.POST, "/api/v1.0/administration/connectors/bpnDiscovery" )
                   .hasRole( JwtRoles.ADD.getRole() )
 
             )

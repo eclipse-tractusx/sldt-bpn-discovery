@@ -66,7 +66,7 @@ public class DiscoveryFinderClientServiceTest extends AbstractDiscoveryFinderCli
       discoveryFinderClientService.deleteDiscoveryEndpoint( givenResourceId );
 
       // then
-      wireMockServer.verify( deleteRequestedFor( urlEqualTo( "/api/administration/connectors/discovery/" + givenResourceId ) ) );
+      wireMockServer.verify( deleteRequestedFor( urlEqualTo( "/api/v1.0/administration/connectors/discovery/" + givenResourceId ) ) );
    }
 
    @Test
@@ -82,7 +82,7 @@ public class DiscoveryFinderClientServiceTest extends AbstractDiscoveryFinderCli
       DiscoveryEndpoint actualEndpoint = discoveryFinderClientService.addDiscoveryEndpoint( givenEndpoint );
 
       // then
-      wireMockServer.verify( postRequestedFor( urlEqualTo( "/api/administration/connectors/discovery" ) ) );
+      wireMockServer.verify( postRequestedFor( urlEqualTo( "/api/v1.0/administration/connectors/discovery" ) ) );
       assertThat( actualEndpoint ).isEqualTo( givenEndpoint );
    }
 

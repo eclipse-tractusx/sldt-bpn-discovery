@@ -14,7 +14,7 @@ endpoints.
 The Api with its links can be found here: [BPN Discovery Api] (https://semantics.int.demo.catena-x.net/bpndiscovery/swagger-ui/index.html#/Discovery)
 
 
-#### POST [/api/administration/connectors/bpnDiscovery]
+#### POST [/api/v1.0/administration/connectors/bpnDiscovery]
 
 Create new numbers (e.g., OEN, batteryID, etc.) corresponding to BPN
 endpoints as single entry.
@@ -40,7 +40,7 @@ endpoints as single entry.
 This service is allowed to **administrators only**.
 
 
-#### POST [/api/administration/connectors/bpnDiscovery/batch]
+#### POST [/api/v1.0/administration/connectors/bpnDiscovery/batch]
 
 Create new numbers (e.g., OEN, batteryID, etc.) corresponding to BPN
 endpoints as batch.
@@ -94,7 +94,7 @@ endpoints as batch.
 This service is allowed to **administrators only**.
 
 
-#### POST [/api/administration/connectors/bpnDiscovery/search]
+#### POST [/api/v1.0/administration/connectors/bpnDiscovery/search]
 
 Find BPN endpoints corresponding to numbers (e.g., OEN, batteryID, etc.)
 
@@ -152,7 +152,7 @@ Find BPN endpoints corresponding to numbers (e.g., OEN, batteryID, etc.)
 }
 ```
 
-#### DELETE [/api/administration/connectors/bpnDiscovery/{resourceId}]
+#### DELETE [/api/v1.0/administration/connectors/bpnDiscovery/{resourceId}]
 
 Delete numbers (e.g., OEN, batteryID, etc.) corresponding to BPN
 endpoints as single entry.
