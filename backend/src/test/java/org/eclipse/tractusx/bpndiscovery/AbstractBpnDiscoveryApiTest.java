@@ -43,9 +43,9 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 @EnableConfigurationProperties( BpnDiscoveryProperties.class )
 public abstract class AbstractBpnDiscoveryApiTest {
 
-   protected static final String BPN_DISCOVERY_BASE_PATH = "/api/administration/connectors/bpnDiscovery";
-   protected static final String BPN_DISCOVERY_BATCH_API = "/api/administration/connectors/bpnDiscovery/batch";
-   protected static final String BPN_DISCOVERY_SEARCH_API = "/api/administration/connectors/bpnDiscovery/search";
+   protected static final String BPN_DISCOVERY_BASE_PATH = "/api/v1.0/administration/connectors/bpnDiscovery";
+   protected static final String BPN_DISCOVERY_BATCH_API = "/api/v1.0/administration/connectors/bpnDiscovery/batch";
+   protected static final String BPN_DISCOVERY_SEARCH_API = "/api/v1.0/administration/connectors/bpnDiscovery/search";
 
    @Autowired
    protected MockMvc mockMvc;

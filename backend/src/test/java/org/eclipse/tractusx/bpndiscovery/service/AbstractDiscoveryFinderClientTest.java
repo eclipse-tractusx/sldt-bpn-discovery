@@ -77,25 +77,25 @@ public abstract class AbstractDiscoveryFinderClientTest {
    }
 
    protected void addStubForSearch( SearchRequest searchRequest, DiscoveryEndpointCollection response ) throws JsonProcessingException {
-      wireMockServer.stubFor( post( "/api/administration/connectors/discovery/search" )
+      wireMockServer.stubFor( post( "/api/v1.0/administration/connectors/discovery/search" )
             .withRequestBody( equalToJson( toJson( searchRequest ) ) )
             .willReturn( aResponse().withStatus( 200 )
                   .withHeader( "Content-Type", APPLICATION_JSON_VALUE ).withBody( toJson( response ) ) ) );
    }
 
    protected void addStubForSearch( DiscoveryEndpointCollection response ) throws JsonProcessingException {
-      wireMockServer.stubFor( post( "/api/administration/connectors/discovery/search" )
+      wireMockServer.stubFor( post( "/api/v1.0/administration/connectors/discovery/search" )
             .willReturn( aResponse().withStatus( 200 )
                   .withHeader( "Content-Type", APPLICATION_JSON_VALUE ).withBody( toJson( response ) ) ) );
    }
 
    protected void addStubForDelete( String resourceId ) {
-      wireMockServer.stubFor( delete( "/api/administration/connectors/discovery/" + resourceId )
+      wireMockServer.stubFor( delete( "/api/v1.0/administration/connectors/discovery/" + resourceId )
             .willReturn( aResponse().withStatus( 201 ) ) );
    }
 
    protected void addStubForSave( DiscoveryEndpoint discoveryEndpoint ) throws JsonProcessingException {
-      wireMockServer.stubFor( post( "/api/administration/connectors/discovery" )
+      wireMockServer.stubFor( post( "/api/v1.0/administration/connectors/discovery" )
             .willReturn( aResponse().withStatus( 200 ).withHeader( "Content-Type", APPLICATION_JSON_VALUE )
                   .withBody( toJson( discoveryEndpoint ) ) ) );
    }
