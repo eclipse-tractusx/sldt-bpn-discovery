@@ -32,7 +32,7 @@ bpndiscovery:
   authentication: false
   idp:
     issuerUri: "https://idp-url"
-    publicClientId: idpClientID1
+    publicClientId: idpClientID
     bpnIdClaimName: bpn
   ## Needed for the self-registration on discovery-finder
   bpndiscoveryEndpoint:
