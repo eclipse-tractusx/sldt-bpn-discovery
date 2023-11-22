@@ -81,6 +81,40 @@ When an entry shall be deleted this BPN is used to verify that the requester is 
 To deploy this system, you need to use the Helm Chart in a running
 Kubernetes cluster. The Helm Chart is located under "charts/bpndiscovery". For further information checkout the [readme.md](https://github.com/eclipse-tractusx/sldt-bpn-discovery/blob/main/README.md) and the [install.md](INSTALL.md).  
 
+## Security Assessment
+
+### Data Flow Diagram
+
+```mermaid
+%%{init: {"flowchart": {"curve": "linear"} }}%%
+flowchart
+    DC(Data Consumer \n <i>e.g. IR</i>)
+    DP(Data Provider)
+    K(Keycloak)
+
+    subgraph Discovery Finder
+    DF(Discovery Finder Backend)
+    DFDB[(Discovery Finder postgres)]
+    end
+
+    subgraph BPN Discovery
+    BD(BPN Discovery Backend)
+    BDDB[(BPN Discovery postgres \n <i>N instances per data \n asset type and usage</i>)]
+    end
+    
+    DC <-->|Token request| K
+    DP <-->|Token request| K
+
+    DF <-->|Request endpoint for given type| DC
+    DF <--> DFDB
+    K -.->|Provide public key for token validation| DF
+
+    BD <--> BDDB
+    DC <-->|Request BPN for specific type| BD
+    DP -->|Register BPN type key| BD
+    BD -->|Success/error message for registration| DP
+    K -.->|Provide public key for token validation| BD
+```
 
 
 ### NOTICE
