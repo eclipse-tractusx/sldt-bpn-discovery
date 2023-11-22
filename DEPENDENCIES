@@ -9,6 +9,7 @@ maven/mavencentral/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.15.2
 maven/mavencentral/com.fasterxml.jackson.module/jackson-module-parameter-names/2.15.2, Apache-2.0, approved, #8803
 maven/mavencentral/com.fasterxml/classmate/1.5.1, Apache-2.0, approved, clearlydefined
 maven/mavencentral/com.github.stephenc.jcip/jcip-annotations/1.0-1, Apache-2.0, approved, CQ21949
+maven/mavencentral/com.github.tomakehurst/wiremock-standalone/2.27.2, Apache-2.0, approved, #6959
 maven/mavencentral/com.h2database/h2/2.1.214, (EPL-1.0 AND MPL-2.0) AND (EPL-1.0 AND MPL-2.0 AND LGPL-3.0-or-later) AND BSD-3-Clause AND LicenseRef-Public-Domain, approved, #2713
 maven/mavencentral/com.jayway.jsonpath/json-path/2.8.0, Apache-2.0, approved, clearlydefined
 maven/mavencentral/com.nimbusds/content-type/2.2, Apache-2.0, approved, clearlydefined
@@ -16,6 +17,7 @@ maven/mavencentral/com.nimbusds/lang-tag/1.7, Apache-2.0, approved, clearlydefin
 maven/mavencentral/com.nimbusds/nimbus-jose-jwt/9.31, Apache-2.0, approved, clearlydefined
 maven/mavencentral/com.nimbusds/oauth2-oidc-sdk/9.43.3, Apache-2.0, approved, clearlydefined
 maven/mavencentral/com.opencsv/opencsv/5.7.1, Apache-2.0, approved, clearlydefined
+maven/mavencentral/com.sun.istack/istack-commons-runtime/4.1.2, BSD-3-Clause, approved, #2590
 maven/mavencentral/com.vaadin.external.google/android-json/0.0.20131108.vaadin1, Apache-2.0, approved, CQ21310
 maven/mavencentral/com.zaxxer/HikariCP/5.0.1, Apache-2.0, approved, clearlydefined
 maven/mavencentral/io.github.classgraph/classgraph/4.8.149, MIT, approved, CQ22530
@@ -23,15 +25,17 @@ maven/mavencentral/io.micrometer/micrometer-commons/1.11.2, Apache-2.0 AND (Apac
 maven/mavencentral/io.micrometer/micrometer-core/1.11.2, Apache-2.0 AND (Apache-2.0 AND MIT), approved, #9238
 maven/mavencentral/io.micrometer/micrometer-observation/1.11.2, Apache-2.0, approved, #9242
 maven/mavencentral/io.projectreactor/reactor-core/3.5.8, Apache-2.0, approved, #5934
+maven/mavencentral/io.smallrye/jandex/3.0.5, Apache-2.0, approved, clearlydefined
 maven/mavencentral/io.swagger.core.v3/swagger-annotations-jakarta/2.2.7, Apache-2.0, approved, #5947
 maven/mavencentral/io.swagger.core.v3/swagger-annotations/2.0.0, Apache-2.0, approved, clearlydefined
 maven/mavencentral/io.swagger.core.v3/swagger-core-jakarta/2.2.7, Apache-2.0, approved, #5929
 maven/mavencentral/io.swagger.core.v3/swagger-models-jakarta/2.2.7, Apache-2.0, approved, #5919
 maven/mavencentral/jakarta.activation/jakarta.activation-api/2.1.2, EPL-2.0 OR BSD-3-Clause OR GPL-2.0-only with Classpath-exception-2.0, approved, ee4j.jaf
 maven/mavencentral/jakarta.annotation/jakarta.annotation-api/2.1.1, EPL-2.0 OR GPL-2.0-only with Classpath-exception-2.0, approved, ee4j.ca
+maven/mavencentral/jakarta.inject/jakarta.inject-api/2.0.1, Apache-2.0, approved, clearlydefined
 maven/mavencentral/jakarta.persistence/jakarta.persistence-api/3.1.0, EPL-2.0 OR BSD-3-Clause AND (EPL-2.0 OR BSD-3-Clause AND BSD-3-Clause), approved, #7696
 maven/mavencentral/jakarta.transaction/jakarta.transaction-api/2.0.1, EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0, approved, #7697
-maven/mavencentral/jakarta.validation/jakarta.validation-api/3.0.2, Apache-2.0, approved, clearlydefined
+maven/mavencentral/jakarta.validation/jakarta.validation-api/3.0.2, Apache-2.0, approved, ee4j.validation
 maven/mavencentral/jakarta.xml.bind/jakarta.xml.bind-api/4.0.0, BSD-3-Clause, approved, ee4j.jaxb
 maven/mavencentral/javax.activation/javax.activation-api/1.2.0, (CDDL-1.1 OR GPL-2.0 WITH Classpath-exception-2.0) AND Apache-2.0, approved, CQ18740
 maven/mavencentral/javax.xml.bind/jaxb-api/2.3.1, CDDL-1.1 OR GPL-2.0-only WITH Classpath-exception-2.0, approved, CQ16911
@@ -51,18 +55,29 @@ maven/mavencentral/org.apache.tomcat.embed/tomcat-embed-websocket/10.1.11, Apach
 maven/mavencentral/org.apiguardian/apiguardian-api/1.1.2, Apache-2.0, approved, clearlydefined
 maven/mavencentral/org.aspectj/aspectjweaver/1.9.19, EPL-1.0, approved, tools.aspectj
 maven/mavencentral/org.assertj/assertj-core/3.24.2, Apache-2.0, approved, #6161
+maven/mavencentral/org.checkerframework/checker-qual/3.5.0, MIT, approved, clearlydefined
+maven/mavencentral/org.eclipse.angus/angus-activation/2.0.1, EPL-2.0 OR GPL-2.0-only with Classpath-exception-2.0, approved, ee4j.angus
+maven/mavencentral/org.glassfish.jaxb/jaxb-core/4.0.3, BSD-3-Clause, approved, ee4j.jaxb
+maven/mavencentral/org.glassfish.jaxb/jaxb-runtime/4.0.3, BSD-3-Clause, approved, ee4j.jaxb
+maven/mavencentral/org.glassfish.jaxb/txw2/4.0.3, BSD-3-Clause, approved, ee4j.jaxb
 maven/mavencentral/org.hamcrest/hamcrest/2.2, BSD-3-Clause, approved, clearlydefined
+maven/mavencentral/org.hdrhistogram/HdrHistogram/2.1.12, BSD-2-Clause OR LicenseRef-Public-Domain, approved, CQ13192
+maven/mavencentral/org.hibernate.common/hibernate-commons-annotations/6.0.6.Final, LGPL-2.1-only, approved, #6962
 maven/mavencentral/org.hibernate.orm/hibernate-core/6.2.6.Final, LGPL-2.1-only AND Apache-2.0 AND MIT AND CC-PDDC AND (EPL-2.0 OR BSD-3-Clause), approved, #9121
 maven/mavencentral/org.hibernate.validator/hibernate-validator/8.0.1.Final, Apache-2.0, approved, clearlydefined
 maven/mavencentral/org.jboss.logging/jboss-logging/3.5.3.Final, Apache-2.0, approved, #9471
 maven/mavencentral/org.junit.jupiter/junit-jupiter-api/5.9.3, EPL-2.0, approved, #3133
+maven/mavencentral/org.junit.jupiter/junit-jupiter-engine/5.9.3, EPL-2.0, approved, #3125
 maven/mavencentral/org.junit.jupiter/junit-jupiter-params/5.9.3, EPL-2.0, approved, #3134
 maven/mavencentral/org.junit.jupiter/junit-jupiter/5.9.3, EPL-2.0, approved, #6972
 maven/mavencentral/org.junit.platform/junit-platform-commons/1.9.3, EPL-2.0, approved, #3130
+maven/mavencentral/org.junit.platform/junit-platform-engine/1.9.3, EPL-2.0, approved, #3128
+maven/mavencentral/org.latencyutils/LatencyUtils/2.0.3, BSD-2-Clause, approved, CQ17408
 maven/mavencentral/org.liquibase/liquibase-core/4.19.1, Apache-2.0, approved, clearlydefined
 maven/mavencentral/org.mapstruct/mapstruct/1.5.3.Final, Apache-2.0, approved, #6277
 maven/mavencentral/org.mockito/mockito-core/5.3.1, MIT AND (Apache-2.0 AND MIT) AND Apache-2.0, approved, #7925
 maven/mavencentral/org.mockito/mockito-junit-jupiter/5.3.1, MIT, approved, clearlydefined
+maven/mavencentral/org.objenesis/objenesis/3.3, Apache-2.0, approved, clearlydefined
 maven/mavencentral/org.openapitools/jackson-databind-nullable/0.2.5, Apache-2.0, approved, #3294
 maven/mavencentral/org.opentest4j/opentest4j/1.2.0, Apache-2.0, approved, clearlydefined
 maven/mavencentral/org.ow2.asm/asm/9.3, BSD-3-Clause, approved, clearlydefined
@@ -72,7 +87,7 @@ maven/mavencentral/org.reactivestreams/reactive-streams/1.0.4, CC0-1.0, approved
 maven/mavencentral/org.skyscreamer/jsonassert/1.5.1, Apache-2.0, approved, clearlydefined
 maven/mavencentral/org.slf4j/jul-to-slf4j/2.0.7, MIT, approved, #7698
 maven/mavencentral/org.slf4j/slf4j-api/2.0.7, MIT, approved, #5915
-maven/mavencentral/org.slf4j/slf4j-simple/2.0.7, MIT, approved, clearlydefined
+maven/mavencentral/org.slf4j/slf4j-simple/2.0.7, MIT, approved, #10372
 maven/mavencentral/org.springdoc/springdoc-openapi-starter-common/2.0.2, Apache-2.0, approved, #5920
 maven/mavencentral/org.springdoc/springdoc-openapi-starter-webmvc-api/2.0.2, Apache-2.0, approved, #5950
 maven/mavencentral/org.springdoc/springdoc-openapi-starter-webmvc-ui/2.0.2, Apache-2.0, approved, #5923
@@ -106,6 +121,7 @@ maven/mavencentral/org.springframework.security/spring-security-oauth2-client/6.
 maven/mavencentral/org.springframework.security/spring-security-oauth2-core/6.1.2, Apache-2.0, approved, #9741
 maven/mavencentral/org.springframework.security/spring-security-oauth2-jose/6.1.2, Apache-2.0, approved, #9345
 maven/mavencentral/org.springframework.security/spring-security-oauth2-resource-server/6.1.2, Apache-2.0, approved, #8798
+maven/mavencentral/org.springframework.security/spring-security-test/6.1.2, Apache-2.0, approved, #10674
 maven/mavencentral/org.springframework.security/spring-security-web/6.1.2, Apache-2.0, approved, #9800
 maven/mavencentral/org.springframework/spring-aop/6.0.11, Apache-2.0, approved, #5940
 maven/mavencentral/org.springframework/spring-aspects/6.0.11, Apache-2.0, approved, #5930
