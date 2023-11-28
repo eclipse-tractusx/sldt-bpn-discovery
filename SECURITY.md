@@ -2,11 +2,18 @@
 
 ## Reporting a Vulnerability
 
-**Please do not report security vulnerabilities through public GitHub issues.**
+Please do **not** report security vulnerabilities through public GitHub issues.
 
-Please report vulnerabilities to this repository via GitHub security advisories instead.
+Please report vulnerabilities to this repository via **GitHub security advisories** instead.
 
-How? Inside affected repository --> security tab --> advisories --> _New draft security advisory_
+__How?__ Inside affected repository --> security tab
 
-In severe cases, you can also report a found vulnerability here:
-[https://www.eclipse.org/security/](https://www.eclipse.org/security/)
+for contributor:
+--> Report a vulnerability
+
+for committer:
+--> advisories --> New draft security advisory
+
+In severe cases, you can also report a found vulnerability via mail or eclipse issue here: https://www.eclipse.org/security/
+
+See [Eclipse Foundation Vulnerability Reporting Policy](https://www.eclipse.org/projects/handbook/#vulnerability).
