@@ -6,5 +6,6 @@ The following people have contributed to this repository:
 * Simone Lindner, external.simone.lindner@bosch.com
 * Tunahan Cicek, Robert Bosch GmbH, Tunahan.Cicek@de.bosch.com
 * Sahil Aggarwal, Robert Bosch GmbH, Sahil.Aggarwal@de.bosch.com
+* Shijin Raj, Robert Bosch GmbH, Shijin.Raj@de.bosch.com
 
 Please add yourself to this list, if you contribute to the content.
