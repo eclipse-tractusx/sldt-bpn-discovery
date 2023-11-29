@@ -85,6 +85,6 @@ postgresql:
       postgresql: 5432
   auth:
     username: catenax
-    existingSecret: "secret"
+    existingSecret: "cx-bpndiscovery-sec"
     password: ""
     database: bpndiscovery
