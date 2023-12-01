@@ -9,7 +9,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 ## fixed
-- SECURITY.md updated.
+- AUTHORS.md updated
 
 ## 0.2.6
 ### Added
