@@ -9,8 +9,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 ## fixed
-- Updated link to INSTALL.md at README.md to be reachable from DockerHub
-
+- AUTHORS.md updated
 
 ## 0.2.6
 ### Added
