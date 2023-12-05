@@ -12,6 +12,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - AUTHORS.md updated
 - SECURITY.md updated
 - Updated link to INSTALL.md at README.md to be reachable from DockerHub
+- Spring Boot version updated to 3.1.6 to fix CVE-2023-46589 and CVE-2023-34053
+- update logback version to fix CVE-2023-6378
 
 ## 0.2.6
 ### Added
