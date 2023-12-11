@@ -40,7 +40,7 @@ bpndiscovery:
     description: "bpndiscovery"
     endpointAddress: "/bpndiscovery"
     documentation: "/bpndiscovery/swagger/index.html"
-    timeToLive: 31536000
+    timeToLive: "31536000"
   ## Configure discoveryFinderClient to register the bpn-discovery on discovery-finder.Properties needed for spring-security config.
   discoveryfinderClient:
     baseUrl: "/discoveryfinder"
