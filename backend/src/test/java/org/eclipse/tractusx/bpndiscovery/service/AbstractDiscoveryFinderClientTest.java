@@ -107,13 +107,16 @@ public abstract class AbstractDiscoveryFinderClientTest {
             .endpointAddress( "http://localhost:8585" )
             .documentation( "http://localhost:8585/swagger/index.html" )
             .resourceId( "123-wxy" )
+            .timeToLive( 31536000 )
             .build();
    }
 
    public DiscoveryEndpoint applicationDiscoveryEndpoint() {
       return DiscoveryEndpoint.builder()
             .type( bpnDiscoveryProperties.getAllowedTypes().get( 0 ) )
+            .description( bpnDiscoveryProperties.getDescription() )
             .endpointAddress( bpnDiscoveryProperties.getEndpointAddress() )
+            .timeToLive( bpnDiscoveryProperties.getTimeToLive() )
             .resourceId( "resourceId-app-1" )
             .build();
    }

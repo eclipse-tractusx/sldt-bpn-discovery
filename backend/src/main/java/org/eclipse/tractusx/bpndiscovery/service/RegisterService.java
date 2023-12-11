@@ -84,6 +84,8 @@ public class RegisterService {
             .type( type )
             .description( bpnDiscoveryProperties.getDescription() )
             .endpointAddress( bpnDiscoveryProperties.getEndpointAddress() )
-            .documentation( bpnDiscoveryProperties.getDocumentation() ).build();
+            .documentation( bpnDiscoveryProperties.getDocumentation() )
+            .timeToLive( bpnDiscoveryProperties.getTimeToLive() )
+            .build();
    }
 }

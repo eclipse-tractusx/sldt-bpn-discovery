@@ -24,6 +24,7 @@ bpndiscovery:
   description: "Service to discover BPN to a particular OEN"
   endpointAddress: "http://localhost:86866"
   documentation: "http://.../swagger/index.html"
+  timeToLive: 31536000
   idm:
     public-client-id: bpndiscovery
     bpn-id-claim-name: bpn
