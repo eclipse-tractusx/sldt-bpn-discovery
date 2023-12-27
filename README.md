@@ -41,7 +41,7 @@ Run `docker build -f backend/Dockerfile -t sldt-bpn-discovery .`
 In case you want to publish your image into a remote container registry, apply the tag accordingly and `docker push` the image.
 
 ## Install Instructions
-For detailed install instructions please refer to our [INSTALL.md](INSTALL.md).
+For detailed install instructions please refer to our [INSTALL.md](https://github.com/eclipse-tractusx/sldt-bpn-discovery/blob/main/INSTALL.md).
 
 ## Notice for Docker image
 
