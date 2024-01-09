@@ -47,4 +47,6 @@ public class DiscoveryEndpoint {
    @JsonProperty( "resourceId" )
    private String resourceId;
 
+   @JsonProperty( "timeToLive" )
+   private Integer timeToLive;
 }
