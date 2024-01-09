@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.2.8
+### Added
+- new field "timeToLive" to DiscoveryEndpoint added, so that a time to live can be provided for the self registration at the DiscoveryFinder
+
+## fixed
+
 ## 0.2.7
 ### Added
 
@@ -14,6 +20,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Updated link to INSTALL.md at README.md to be reachable from DockerHub
 - Spring Boot version updated to 3.1.6 to fix CVE-2023-46589 and CVE-2023-34053
 - update logback version to fix CVE-2023-6378
+
 
 ## 0.2.6
 ### Added

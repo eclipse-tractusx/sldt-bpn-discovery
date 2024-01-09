@@ -22,6 +22,7 @@ bpndiscovery:
   description:
   endpointAddress:
   documentation:
+  timeToLive:
   idm:
     public-client-id:
     bpn-id-claim-name:
