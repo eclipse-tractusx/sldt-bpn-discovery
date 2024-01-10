@@ -24,8 +24,8 @@ sources:
   - https://github.com/eclipse-tractusx/sldt-bpn-discovery
 
 type: application
-version: 0.1.15
-appVersion: 0.2.7
+version: 0.1.16
+appVersion: 0.2.8
 
 dependencies:
   - repository: https://charts.bitnami.com/bitnami
