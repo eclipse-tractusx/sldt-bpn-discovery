@@ -90,4 +90,4 @@ postgresql:
     password:
     database: bpndiscovery
     # -- Secret contains passwords for username postgres.
-    existingSecret: secret-postgres-init
+    existingSecret: secret-bpndiscovery-postgres-init
