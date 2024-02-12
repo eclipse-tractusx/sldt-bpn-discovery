@@ -24,7 +24,7 @@ sources:
   - https://github.com/eclipse-tractusx/sldt-bpn-discovery
 
 type: application
-version: 0.2.0
+version: 0.2.1
 appVersion: 0.2.8
 
 dependencies:
