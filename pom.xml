@@ -72,7 +72,7 @@
       <jackson-nullable.version>0.2.5</jackson-nullable.version>
       <jakarta.validation.version>3.0.2</jakarta.validation.version>
       <snakeyaml.version>2.0</snakeyaml.version>
-      <webflux-version>6.0.6</webflux-version>
+      <webflux-version>6.1.4</webflux-version>
       <!-- logging -->
       <slf4j.version>2.0.7</slf4j.version>
       <logback.version>1.4.14</logback.version>
