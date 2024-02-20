@@ -5,6 +5,8 @@ DockerHub: https://hub.docker.com/r/tractusx/sldt-bpn-discovery
 
 Eclipse Tractus-X product(s) installed within the image:
 
+BPN Discovery
+
 - GitHub: https://github.com/eclipse-tractusx/sldt-bpn-discovery
 - Project home: https://projects.eclipse.org/projects/automotive.tractusx
 - Dockerfile: https://github.com/eclipse-tractusx/sldt-bpn-discovery/blob/main/backend/Dockerfile
