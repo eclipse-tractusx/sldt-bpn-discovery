@@ -37,7 +37,7 @@ The project maintains the following source code repositories:
 
 This project leverages the following third party content.
 
-See DEPENDENCIES file.
+See [DEPENDENCIES](https://github.com/eclipse-tractusx/sldt-bpn-discovery/blob/main/DEPENDENCIES) file.
 
 ## Cryptography
 
