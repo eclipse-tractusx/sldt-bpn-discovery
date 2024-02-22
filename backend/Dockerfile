@@ -29,12 +29,13 @@ RUN mvn clean package
 # step 2: build image
 FROM eclipse-temurin:17-jre-alpine
 
-RUN addgroup -S spring \
-    && adduser -S spring -G spring \
+RUN addgroup -g 101 -S spring \
+    && adduser -u 100 -S spring -G spring \
     && mkdir -p /service \
     && chown spring:spring /service
 
-USER spring:spring
+USER 100:101
+
 WORKDIR /service
 
 COPY --from=builder /build/backend/target/bpn-discovery-backend*.jar app.jar
