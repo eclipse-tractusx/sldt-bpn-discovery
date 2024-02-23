@@ -94,7 +94,7 @@ postgresql:
     ports:
       postgresql: 5432
   auth:
-    username: catenax
+    username: default-user
     # if password is empty, the postgres password will be generated random via postgres-init
     password:
     database: bpndiscovery
