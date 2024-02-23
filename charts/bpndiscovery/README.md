@@ -84,7 +84,7 @@ helm install bpndiscovery -n discovery charts/bpndiscovery
 | enablePostgres | bool | `true`                                | If enabled, the postgreSQL instance will be run. Disable if you use your own hosted postgreSQL. |
 | postgresql.auth.database | string | `"bpndiscovery"`                      | Database name                                                                                 |
 | postgresql.auth.password | string | `"password"`                          | Password for authentication at the database                                                   |
-| postgresql.auth.username | string | `"catenax"`                           | Username that is used to authenticate at the database                                         |
+| postgresql.auth.username | string | `"default-user"`                      | Username that is used to authenticate at the database                                         |
 | postgresql.auth.existingSecret | string | `"secret-bpndiscovery-postgres-init"` |  |
 | postgresql.primary.persistence.enabled | bool | `true`                                | Persistence enabled                                                                           |
 | postgresql.primary.persistence.size | string | `"50Gi"`                              | Size of persistence                                                                           |
