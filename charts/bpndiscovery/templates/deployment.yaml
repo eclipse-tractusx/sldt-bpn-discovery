@@ -1,5 +1,5 @@
-# Copyright (c) 2023 Robert Bosch Manufacturing Solutions GmbH
-# Copyright (c) 2023 Contributors to the Eclipse Foundation
+# Copyright (c) 2024 Robert Bosch Manufacturing Solutions GmbH
+# Copyright (c) 2024 Contributors to the Eclipse Foundation
   #
   # See the NOTICE file(s) distributed with this work for additional
   # information regarding copyright ownership.
@@ -16,27 +16,27 @@
   #
   # SPDX-License-Identifier: Apache-2.0
   ###############################################################
-{{- $deployment_name := printf "cx-%s" .Release.Name }}
-{{- $sec_name := printf "%s-sec" $deployment_name }}
-{{- $svc_name := printf "%s-svc" $deployment_name }}
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $deployment_name }}
+  name: {{ include "bpndiscovery.fullname" . }}
+  labels:
+    {{- include "bpndiscovery.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.bpndiscovery.replicaCount }}
   selector:
     matchLabels:
-      app: {{ $deployment_name }}
+      {{- include "bpndiscovery.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app: {{ $deployment_name }}
+        {{- include "bpndiscovery.selectorLabels" . | nindent 8 }}
     spec:
       securityContext:
         runAsUser: 100
       containers:
-        - name: {{ $deployment_name }}
+        - name: {{ .Chart.Name }}
           image: {{ .Values.bpndiscovery.image.registry }}/{{ .Values.bpndiscovery.image.repository }}:{{ .Values.bpndiscovery.image.version | default .Chart.AppVersion }}
           imagePullPolicy: {{ .Values.bpndiscovery.image.imagePullPolicy }}
           {{- if not .Values.bpndiscovery.authentication }}
@@ -53,19 +53,23 @@ spec:
             httpGet:
               path: /actuator/health/liveness
               port: {{ .Values.bpndiscovery.containerPort }}
-            initialDelaySeconds: 100
-            periodSeconds: 3
-            failureThreshold: 3
+            initialDelaySeconds: {{ .Values.bpndiscovery.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.bpndiscovery.livenessProbe.periodSeconds }}
+            failureThreshold: {{ .Values.bpndiscovery.livenessProbe.failureThreshold }}
           readinessProbe:
             httpGet:
               path: /actuator/health/readiness
               port: {{ .Values.bpndiscovery.containerPort }}
-            initialDelaySeconds: 60
-            periodSeconds: 3
-            failureThreshold: 3
+            initialDelaySeconds: {{ .Values.bpndiscovery.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.bpndiscovery.readinessProbe.periodSeconds }}
+            failureThreshold: {{ .Values.bpndiscovery.readinessProbe.failureThreshold }}
           envFrom:
             - secretRef:
-                name: {{ $sec_name }}
+                name: {{ include "bpndiscovery.fullname" . }}
+            {{- if .Values.enablePostgres }}
+            - secretRef:
+                name: {{ .Values.postgresql.auth.existingSecret }}
+            {{- end }}
           resources:
 {{ .Values.bpndiscovery.resources | toYaml | indent 12 }}
       imagePullSecrets:

@@ -1,3 +1,4 @@
+###############################################################
 # Copyright (c) 2024 Robert Bosch Manufacturing Solutions GmbH
 # Copyright (c) 2024 Contributors to the Eclipse Foundation
 #
@@ -16,19 +17,31 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
-apiVersion: v2
-name: bpndiscovery
-description: Tractus-X BPN Discovery Helm Chart
-home: https://eclipse-tractusx.github.io/
-sources:
-  - https://github.com/eclipse-tractusx/sldt-bpn-discovery
+version: 2
+updates:
+    # Maintain dependencies for Maven
+  - package-ecosystem: "maven"
+    directory: "/"
+    open-pull-requests-limit: 5
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "03:00"
 
-type: application
-version: 0.2.4
-appVersion: 0.2.8
+    # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    open-pull-requests-limit: 5
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "03:00"
 
-dependencies:
-  - repository: https://charts.bitnami.com/bitnami
-    name: postgresql
-    version: 12.12.10
-    condition: enablePostgres
+    # Maintain dependencies for Docker
+  - package-ecosystem: "docker"
+    directory: "/"
+    open-pull-requests-limit: 5
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "03:00"

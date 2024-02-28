@@ -1,5 +1,5 @@
-# Copyright (c) 2023 Robert Bosch Manufacturing Solutions GmbH
-# Copyright (c) 2023 Contributors to the Eclipse Foundation
+# Copyright (c) 2024 Robert Bosch Manufacturing Solutions GmbH
+# Copyright (c) 2024 Contributors to the Eclipse Foundation
 #
 # See the NOTICE file(s) distributed with this work for additional
 # information regarding copyright ownership.
@@ -16,7 +16,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
-
+nameOverride:
+fullnameOverride:
 enablePostgres: true
 
 bpndiscovery:
@@ -40,7 +41,7 @@ bpndiscovery:
     description: "bpndiscovery"
     endpointAddress: "/bpndiscovery"
     documentation: "/bpndiscovery/swagger/index.html"
-    timeToLive: 31536000
+    timeToLive: "31536000"
   ## Configure discoveryFinderClient to register the bpn-discovery on discovery-finder.Properties needed for spring-security config.
   discoveryfinderClient:
     baseUrl: "/discoveryfinder"
@@ -54,14 +55,22 @@ bpndiscovery:
   service:
     port: 8080
     type: ClusterIP
+  livenessProbe:
+    failureThreshold: 3
+    periodSeconds: 3
+    initialDelaySeconds: 100
+  readinessProbe:
+    failureThreshold: 3
+    periodSeconds: 3
+    initialDelaySeconds: 100
   dataSource:
     driverClassName: org.postgresql.Driver
     sqlInitPlatform: pg
     ## The url, user, and password parameter will be ignored if 'enablePostgres' is set to true.
     ## In that case the postgresql auth parameters are used.
     url: jdbc:postgresql://database:5432
-    user: user
-    password: password
+    user:
+    password:
   ingress:
     enabled: false
     tls: false
@@ -85,6 +94,9 @@ postgresql:
     ports:
       postgresql: 5432
   auth:
-    username: catenax
-    password: password
+    username: default-user
+    # if password is empty, the postgres password will be generated random via postgres-init
+    password:
     database: bpndiscovery
+    # -- Secret contains passwords for username postgres.
+    existingSecret: secret-bpndiscovery-postgres-init

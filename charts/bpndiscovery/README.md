@@ -72,17 +72,23 @@ helm install bpndiscovery -n discovery charts/bpndiscovery
 | bpndiscovery.resources.requests.memory                                                | string  | `"512Mi"`                           | Resources request memory                                                                                                                                                                                                                 |
 | bpndiscovery.service.port                                                             | int     | `8080`                              | Service port                                                                                                                                                                                                                             |
 | bpndiscovery.service.type                                                             | string  | `"ClusterIP"`                       | Service type                                                                                                                                                                                                                             |
-
+| bpndiscovery.livenessProbe.initialDelaySeconds                        | int    | `100`                                                                                                                                                        |  |
+| bpndiscovery.livenessProbe.failureThreshold                        | int    | `3`                                                                                                                                                          |  |
+| bpndiscovery.livenessProbe.periodSeconds                        | int    | `3`                                                                                                                                                          |  |
+| bpndiscovery.readinessProbe.initialDelaySeconds                        | int    | `100`                                                                                                                                                        |  |
+| bpndiscovery.readinessProbe.failureThreshold                        | int    | `3`                                                                                                                                                          |  |
+| bpndiscovery.readinessProbe.periodSeconds                        | int    | `3`                                                                                                                                                          |  |
 ### PostgreSQL parameters
-| Key | Type | Default                             | Description                                                                                   |
-|-----|------|-------------------------------------|-----------------------------------------------------------------------------------------------|
-| enablePostgres | bool | `true`                              | If enabled, the postgreSQL instance will be run. Disable if you use your own hosted postgreSQL. |
-| postgresql.auth.database | string | `"bpndiscovery"`                 | Database name                                                                                 |
-| postgresql.auth.password | string | `"password"`                        | Password for authentication at the database                                                   |
-| postgresql.auth.username | string | `"catenax"`                         | Username that is used to authenticate at the database                                         |
-| postgresql.primary.persistence.enabled | bool | `true`                              | Persistence enabled                                                                           |
-| postgresql.primary.persistence.size | string | `"50Gi"`                            | Size of persistence                                                                           |
-| postgresql.service.ports.postgresql | int | `5432`                              | Size of the PersistentVolume that persists the data                                           |
+| Key | Type | Default                               | Description                                                                                   |
+|-----|------|---------------------------------------|-----------------------------------------------------------------------------------------------|
+| enablePostgres | bool | `true`                                | If enabled, the postgreSQL instance will be run. Disable if you use your own hosted postgreSQL. |
+| postgresql.auth.database | string | `"bpndiscovery"`                      | Database name                                                                                 |
+| postgresql.auth.password | string | `"password"`                          | Password for authentication at the database                                                   |
+| postgresql.auth.username | string | `"default-user"`                      | Username that is used to authenticate at the database                                         |
+| postgresql.auth.existingSecret | string | `"secret-bpndiscovery-postgres-init"` |  |
+| postgresql.primary.persistence.enabled | bool | `true`                                | Persistence enabled                                                                           |
+| postgresql.primary.persistence.size | string | `"50Gi"`                              | Size of persistence                                                                           |
+| postgresql.service.ports.postgresql | int | `5432`                                | Size of the PersistentVolume that persists the data                                           |
 
 ----------------------------------------------
 Autogenerated from chart metadata using [helm-docs v1.11.0](https://github.com/norwoodj/helm-docs/releases/v1.11.0)
