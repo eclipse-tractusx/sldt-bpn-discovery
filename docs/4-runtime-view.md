@@ -1,8 +1,25 @@
 ## 4 Runtime-view
 
 ### Search request
+```mermaid
+sequenceDiagram
+    participant ConsumerApp as ConsumerApp
+    participant BpnDiscoveryApiDelegate as BpnDiscovery ApiDelegate
+    participant BpnDiscoveryMapper as BpnDiscovery Mapper
+    participant BpnDiscoveryService as BpnDiscovery Service
+    participant BpnDiscoveryRepository as BpnDiscovery Repository
+    participant BpnDiscoveryCollectionDto as BpnDiscovery CollectionDto
 
-![](media/SearchFlow.PNG)
+    ConsumerApp->>+BpnDiscoveryApiDelegate: post /api/administration/connectors/bpnDiscovery/search
+    BpnDiscoveryApiDelegate->>+BpnDiscoveryMapper: fromSearchList ApiDto()
+    BpnDiscoveryMapper->>+BpnDiscoveryApiDelegate: List<TypeKeys IdentifierDto
+    BpnDiscoveryMapper->>+BpnDiscoveryService: findBpnDiscoveries()
+    BpnDiscoveryService->>+BpnDiscoveryRepository: findBpnDiscoveriesByTypeAndKeyIn()
+    BpnDiscoveryRepository->>-BpnDiscoveryService: List<TypeKeys IdentifierDto>
+    BpnDiscoveryService->>+BpnDiscoveryCollectionDto: BpnDiscoveryCollectionDto.builder() .bpns(foundBpnDiscoveries) .build()
+    BpnDiscoveryCollectionDto ->>-BpnDiscoveryApiDelegate: BpnDiscoveryCollectionDto
+    BpnDiscoveryApiDelegate->>-ConsumerApp: ResponseEntity<BpnCollection>
+```
 
 1.  The ConsumerApp sends a request with a given type number and type to
     BpnDiscoveryApiDelegate.
@@ -23,9 +40,27 @@
 
 
 ### Add request
+```mermaid
+sequenceDiagram
+    participant DataProvider as Data Provider
+    participant BpnDiscoveryApiDelegate as BpnDiscovery ApiDelegate
+    participant BpnDiscoveryService as BpnDiscovery Service
+    participant BpnDiscoveryMapper as BpnDiscovery Mapper
+    participant ClientAware as ClientAware
+    participant BpnDiscoveryValidator as BpnDiscovery Validator
+    participant BpnDiscoveryRepository as BpnDiscovery Repository
 
-![](media/AddFlow.PNG)
-
+    DataProvider ->>+ BpnDiscoveryApiDelegate: POST /api/administration/connectors/bpnDiscovery
+    BpnDiscoveryApiDelegate ->>- BpnDiscoveryService: save()
+    BpnDiscoveryService ->>+ BpnDiscoveryMapper: fromApi()
+    BpnDiscoveryMapper ->>- BpnDiscoveryService: BpnDiscovoery
+    BpnDiscoveryService ->>+ ClientAware: getBpn()
+    ClientAware ->>- BpnDiscoveryService: BpnDiscovery
+    BpnDiscoveryService ->>+ BpnDiscoveryValidator: validate()
+    BpnDiscoveryService ->>+ BpnDiscoveryRepository: save()
+    BpnDiscoveryService ->>+ BpnDiscoveryApiDelegate: BpnDiscovery
+    BpnDiscoveryApiDelegate ->>+ DataProvider: ResponseEntity<Bpn>
+```
 
 1.  The Data Provider sends a request with one given type number and
     type to BpnDiscoveryApiDelegate.
@@ -49,9 +84,28 @@
 
 
 ### Add batch request
+```mermaid
+sequenceDiagram
+    participant DataProvider as Data Provider
+    participant BpnDiscoveryApiDelegate as BpnDiscovery ApiDelegate
+    participant BpnDiscoveryMapper as BpnDiscovery Mapper
+    participant BpnDiscoveryService as BpnDiscovery Service
+    participant ClientAware as ClientAware
+    participant BpnDiscoveryValidator as BpnDiscovery Validator
+    participant BpnDiscoveryRepository as BpnDiscovery Repository
 
-![](media/AddBatchFlow.PNG)
-
+    DataProvider ->>+ BpnDiscoveryApiDelegate: POST /api/administration/connectors/bpnDiscovery/batch
+    BpnDiscoveryApiDelegate ->>+ BpnDiscoveryMapper: fromListApiDto()
+    BpnDiscoveryMapper ->>- BpnDiscoveryApiDelegate: List<BpnDiscovery>
+    BpnDiscoveryApiDelegate ->>+ BpnDiscoveryService: saveBatch()
+    BpnDiscoveryService ->>+ BpnDiscoveryService: save()
+    BpnDiscoveryService ->>+ ClientAware: getBpn()
+    ClientAware ->>- BpnDiscoveryService: BpnDiscovery
+    BpnDiscoveryService ->>+ BpnDiscoveryValidator: validate()
+    BpnDiscoveryService ->>+ BpnDiscoveryRepository: save()
+    BpnDiscoveryService ->>- BpnDiscoveryApiDelegate: List<BatchResultDto>
+    BpnDiscoveryApiDelegate ->>- DataProvider: ResponseEntity <List<TypeKeyPairBatchResult>>
+```
 
 1.  The Data Provider sends a request with multiple given type numbers
     for one type to BpnDiscoveryApiDelegate.
@@ -78,8 +132,25 @@
 
 
 ### Delete request
+```mermaid
+sequenceDiagram
+    participant DataProvider as Data Provider
+    participant BpnDiscoveryApiDelegate as BpnDiscovery ApiDelegate
+    participant BpnDiscoveryService as BpnDiscovery Service
+    participant UuidUtils as Uuid Util
+    participant ClientAware as ClientAware
+    participant BpnDiscoveryRepository as BpnDiscovery Repository
+    participant ClientAware as ClientAware
 
-![](media/DeleteFlow.PNG)
+    DataProvider ->>+ BpnDiscoveryApiDelegate: DELETE /api/administration/connectors/bpnDiscovery/{resourceId}
+    BpnDiscoveryApiDelegate ->>+ BpnDiscoveryService: delete()
+    BpnDiscoveryService ->>+ UuidUtils: validateUUID()
+    BpnDiscoveryService ->>+ BpnDiscoveryRepository: findBpnDiscoveryByResourceId()
+    BpnDiscoveryRepository ->>- BpnDiscoveryService: BpnDiscovery
+    BpnDiscoveryService ->>+ ClientAware: validateBpnOwnership()
+    BpnDiscoveryService ->>+ BpnDiscoveryRepository: deleteById()
+    BpnDiscoveryApiDelegate ->>- DataProvider: ResponseEntity<Void>
+```
 
 1.  The Data Provider sends a request to delete an entry to
     BpnDiscoveryApiDelegate.
