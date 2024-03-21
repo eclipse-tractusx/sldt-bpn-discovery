@@ -21,49 +21,6 @@ There are two actors who interact with this service.
 ## BPN Discovery Api
 The BPN Discovery provides a Swagger-Interface for all endpoints: https://semantics.int.demo.catena-x.net/bpndiscovery/swagger-ui/index.html
 
-#### Search request
-![](media/Search_BPN.PNG)
-
-**Request body**
-
-![](media/Search_Request_BPn.PNG)
-
-**Response**
-
-![](media/Response_Search_BPN.PNG)
-
-#### Add request
-![](media/Add_BPN.PNG)
-
-**Request body**
-
-![](media/Add_Request_BPN.PNG)
-
-**Response**
-
-![](media/Respnse_add_BPN.PNG)
-#### Add batch request
-![](media/Add_Batch_BPN.PNG)
-
-**Request**
-
-![](media/add_batch_request.PNG)
-
-**Response**
-
-![](media/add_batch_response_BPN.PNG)
-
-#### Delete request
-![](media/Delete_BPN.PNG)
-
-**ResourceId**
-
-![](media/resourceID_BPN.PNG)
-
-**Response**
-
-![](media/Delete_Response_BPN.PNG)
-
 ## Authentication & Authorization
 The service is secured by a OAuth2 compliant authorization. Every API call has to provide a
 valid Bearer Token. Authorization is provided by a role based access. These roles are possible:
