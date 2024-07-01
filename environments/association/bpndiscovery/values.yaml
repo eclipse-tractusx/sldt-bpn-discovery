@@ -30,8 +30,8 @@ bpndiscovery:
     ## If 'authentication' is set to false, no OAuth authentication is enforced
     authentication: true
     idp:
-      issuerUri: <path:semantics/data/authentication#keycloak-idp>
-      publicClientId: <path:semantics/data/authentication#idpClientIdBpnDiscovery>
+      issuerUri: <path:semantics/data/commons#keycloak-idp>
+      publicClientId: <path:semantics/data/bpndiscovery#idpClientIdBpnDiscovery>
       bpnIdClaimName: bpn
     ## Needed for the self-registration on discovery-finder
     bpndiscoveryEndpoint:
@@ -44,12 +44,12 @@ bpndiscovery:
     discoveryfinderClient:
       baseUrl: https://semantics.int.catena-x.net/discoveryfinder
       registration:
-        clientId: <path:semantics/data/authentication#discoveryFinder-technical-user>
-        clientSecret: <path:semantics/data/authentication#discoveryFinder-technical-user-password>
+        clientId: <path:semantics/data/bpndiscovery#discoveryFinder-technical-user>
+        clientSecret: <path:semantics/data/bpndiscovery#discoveryFinder-technical-user-password>
         authorizationGrantType: client_credentials
       schedulerCronFrequency: "0 0 */1 * * *"
       provider:
-        tokenUri: <path:semantics/data/authentication#keycloak-idp>/protocol/openid-connect/token
+        tokenUri: <path:semantics/data/commons#keycloak-idp>/protocol/openid-connect/token
     service:
       port: 8080
       type: ClusterIP
@@ -60,7 +60,7 @@ bpndiscovery:
       ## In that case the postgresql auth parameters are used.
       url: jdbc:postgresql://semantic-services-postgresql:5432/bpndiscovery
       user: catenax
-      password: <path:semantics/data/authentication#dbpassword>
+      password: <path:semantics/data/bpndiscovery#dbpassword>
     ingress:
       enabled: true
       tls: true
@@ -89,5 +89,5 @@ bpndiscovery:
         postgresql: 5432
     auth:
       username: catenax
-      password: <path:semantics/data/authentication#dbpassword>
+      password: <path:semantics/data/bpndiscovery#dbpassword>
       database: bpndiscovery
