@@ -28,7 +28,7 @@ bpndiscovery:
     containerPort: 4243
     host: semantics.int.catena-x.net
     ## If 'authentication' is set to false, no OAuth authentication is enforced
-    authentication: false
+    authentication: true
     idp:
       issuerUri: <path:semantics/data/commons#keycloak-idp>
       publicClientId: <path:semantics/data/bpndiscovery#idpClientIdBpnDiscovery>
@@ -49,7 +49,7 @@ bpndiscovery:
         authorizationGrantType: client_credentials
       schedulerCronFrequency: "0 0 */1 * * *"
       provider:
-        tokenUri: https://centralidp.int.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token
+        tokenUri: <path:semantics/data/commons#keycloak-idp>/protocol/openid-connect/token
     service:
       port: 8080
       type: ClusterIP
