@@ -28,7 +28,7 @@ bpndiscovery:
     containerPort: 4243
     host: semantics.int.catena-x.net
     ## If 'authentication' is set to false, no OAuth authentication is enforced
-    authentication: true
+    authentication: false
     idp:
       issuerUri: <path:semantics/data/commons#keycloak-idp>
       publicClientId: <path:semantics/data/bpndiscovery#idpClientIdBpnDiscovery>
