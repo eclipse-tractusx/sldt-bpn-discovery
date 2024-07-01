@@ -1,0 +1,12 @@
+apiVersion: v2
+name: bpndiscovery-service
+description: A Helm chart for Kubernetes
+
+type: application
+version: 0.1.0
+appVersion: 0.1.0
+
+dependencies:
+  - repository: https://eclipse-tractusx.github.io/sldt-bpn-discovery
+    name: bpndiscovery
+    version: 0.2.6
