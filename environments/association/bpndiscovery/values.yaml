@@ -49,7 +49,7 @@ bpndiscovery:
         authorizationGrantType: client_credentials
       schedulerCronFrequency: "0 0 */1 * * *"
       provider:
-        tokenUri: <path:semantics/data/commons#keycloak-idp>/protocol/openid-connect/token
+        tokenUri: https://centralidp.int.demo.catena-x.net/auth/realms/CX-Central/protocol/openid-connect/token
     service:
       port: 8080
       type: ClusterIP
