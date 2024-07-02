@@ -44,8 +44,8 @@ bpndiscovery:
     discoveryfinderClient:
       baseUrl: https://semantics.int.catena-x.net/discoveryfinder
       registration:
-        clientId: <path:semantics/data/bpndiscovery#discoveryFinder-technical-user>
-        clientSecret: <path:semantics/data/bpndiscovery#discoveryFinder-technical-user-password>
+        clientId: <path:semantics/data/discoveryfinder#technical-user-df-user>
+        clientSecret: <path:semantics/data/discoveryfinder#technical-user-df-password>
         authorizationGrantType: client_credentials
       schedulerCronFrequency: "0 0 */1 * * *"
       provider:
