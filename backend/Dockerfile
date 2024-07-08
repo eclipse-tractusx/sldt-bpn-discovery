@@ -40,6 +40,8 @@ WORKDIR /service
 
 COPY --from=builder /build/backend/target/bpn-discovery-backend*.jar app.jar
 
+COPY LICENSE NOTICE.md DEPENDENCIES SECURITY.md /legal/
+
 ENV JAVA_TOOL_OPTIONS "-Xms512m -Xmx2048m"
 EXPOSE 4243
 
