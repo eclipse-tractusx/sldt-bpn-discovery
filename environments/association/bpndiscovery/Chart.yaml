@@ -9,4 +9,4 @@ appVersion: 0.1.0
 dependencies:
   - repository: https://eclipse-tractusx.github.io/sldt-bpn-discovery
     name: bpndiscovery
-    version: 0.2.6
+    version: 0.3.0
