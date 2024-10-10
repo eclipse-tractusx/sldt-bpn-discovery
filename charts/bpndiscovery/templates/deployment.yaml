@@ -49,6 +49,7 @@ spec:
           securityContext:
             runAsUser: 100
             allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
@@ -72,5 +73,11 @@ spec:
             {{- end }}
           resources:
 {{ .Values.bpndiscovery.resources | toYaml | indent 12 }}
+          volumeMounts:
+            - mountPath: /tmp
+              name: empty-tmp
+      volumes:
+        - name: empty-tmp
+          emptyDir: {}
       imagePullSecrets:
 {{ .Values.bpndiscovery.imagePullSecrets | toYaml | indent 8 }}
