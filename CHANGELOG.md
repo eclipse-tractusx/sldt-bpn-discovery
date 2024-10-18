@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## 0.5.0-RC2
+## 0.5.0
 ### Added
 ### fixed
 - Update Spring Boot to version 3.3.4
