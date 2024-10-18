@@ -87,6 +87,7 @@
       <!-- build -->
       <maven.compiler.version>3.8.1</maven.compiler.version>
       <wiremock-standalone.version>2.27.2</wiremock-standalone.version>
+      <license-tool-plugin-version>1.1.0</license-tool-plugin-version>
    </properties>
 
    <modules>
@@ -246,8 +247,7 @@
             <plugin>
                <groupId>org.eclipse.dash</groupId>
                <artifactId>license-tool-plugin</artifactId>
-               <!-- see https://repo.eclipse.org/content/repositories/dash-licenses/org/eclipse/dash/license-tool-plugin/ -->
-               <version>1.0.2</version>
+               <version>${license-tool-plugin-version}</version>
                <configuration>
                   <projectId>automotive.tractusx</projectId>
                   <!-- name of dependencies file -->
