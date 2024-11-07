@@ -85,6 +85,11 @@
          <artifactId>spring-security-test</artifactId>
          <scope>test</scope>
       </dependency>
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-webflux</artifactId>
+      </dependency>
+
       <!-- persistence -->
       <dependency>
          <groupId>com.h2database</groupId>
