@@ -32,7 +32,6 @@ The BPN Discovery is used to find according BPNs for a given type / key combinat
 | Data Provider    | registers his keys of a specific type in a BPN Discovery | wants that his EDC / Digital Twin can be found       |
 | Catena-X network | provides the environment and operates the services       | to enable the companies to connect and exchange data |
 
-
 ### NOTICE
 
 This work is licensed under the [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0).

@@ -11,12 +11,12 @@ graph LR
     Data_Provider[Data Provider] -- "register his types and keys" --> BPN_Discovery
 ```
 
-| Neighbor         | Description                                  |
-|------------------|----------------------------------------------|
-| Consumer App     | Searches a BPN                               |
-| Data Provider    | Registers his type and keys at BPN Discovery |
-| Discovery Finder | Provides the endpoints of BPN Discoveries    |
-| Keycloak         | Keycloak is used for token validation        |
+| Neighbor         | Description                                   | Example                                                       |
+|------------------|-----------------------------------------------|---------------------------------------------------------------|
+| Consumer App     | Searches a BPN of given typ / key combination | A consumer searches for a BPN for type "oen" / key "123-oen". |
+| Data Provider    | Registers his type and keys at BPN Discovery  | A provider add a type "oen" / key "123-oen" under his BPN.    |
+| Discovery Finder | Provides the endpoints of BPN Discoveries     |                                                               |
+| Keycloak         | Keycloak is used for token validation         |                                                               |
 
 
 ### Technical Context
