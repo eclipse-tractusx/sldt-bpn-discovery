@@ -1,7 +1,6 @@
 ## 2 Architecture and constraints
 
 ### Overall Architecture
-
 A consumer sends a request to the Discovery Finder with a catalogue of a certain type e.g., "bpid", "oen". The Discovery Finder
 responses with a list of endpoints of BPN Discoveries which provide BPNs for these kind of types.  
 Subsequently the consumer sends a request to the given BPN Discoveries. If the BPN Discovery finds matching entries he returns a list of BPNs.
