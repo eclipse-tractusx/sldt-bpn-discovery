@@ -82,7 +82,7 @@
       <liquibase.version>4.19.1</liquibase.version>
       <!-- test libs -->
       <assertj.version>3.24.2</assertj.version>
-      <junit.version>5.9.3</junit.version>
+      <junit.version>5.10.2</junit.version>
       <!-- build -->
       <maven.compiler.version>3.8.1</maven.compiler.version>
       <wiremock-standalone.version>2.27.2</wiremock-standalone.version>
