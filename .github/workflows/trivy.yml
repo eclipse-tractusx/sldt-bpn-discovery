@@ -55,6 +55,12 @@ jobs:
           vuln-type: "os,library"
           exit-code: "1" # Trivy exits with code 1 if vulnerabilities are found, causing the workflow step to fail.
           limit-severities-for-sarif: true
+        env:
+          # Use AWS' ECR mirror for the trivy-db image, as GitHub's Container
+          # Registry is returning a TOOMANYREQUESTS error.
+          # Ref: https://github.com/aquasecurity/trivy-action/issues/389
+          TRIVY_DB_REPOSITORY: 'public.ecr.aws/aquasecurity/trivy-db:2'
+          TRIVY_JAVA_DB_REPOSITORY: 'public.ecr.aws/aquasecurity/trivy-java-db:1'
 
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v3
