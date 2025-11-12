@@ -1,4 +1,5 @@
 # Copyright (c) 2024 Robert Bosch Manufacturing Solutions GmbH
+# Copyright (c) 2025 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V. (represented by Fraunhofer ISST)
 # Copyright (c) 2024 Contributors to the Eclipse Foundation
 #
 # See the NOTICE file(s) distributed with this work for additional
@@ -66,8 +67,8 @@ bpndiscovery:
   dataSource:
     driverClassName: org.postgresql.Driver
     sqlInitPlatform: pg
-    ## The url, user, and password parameter will be ignored if 'enablePostgres' is set to true.
-    ## In that case the postgresql auth parameters are used.
+    # -- The url, user, and password parameter will be ignored if 'enablePostgres' is set to true.
+    # In that case the postgresql auth parameters are used.
     url: jdbc:postgresql://database:5432
     user:
     password:
@@ -77,6 +78,39 @@ bpndiscovery:
     urlPrefix: /bpndiscovery
     className: nginx
     annotations: {}
+  ingress:
+    # -- enable ingress, default false
+    enabled: false
+    tls:
+      # -- enable tls, default false
+      enabled: false
+      # -- reuse secret in namespace with given name, default "bpndiscovery-certificate-secret"
+      secretName: bpndiscovery-certificate-secret
+    # -- use a urlPrefix to define a path of pathType "Prefix" with regex. Result is a path "/bpndiscovery(/|$)(.*)"
+    urlPrefix: /bpndiscovery
+    # -- specify rules on your own, if the pathType Prefix + Regex runs into issues with your ClusterIssuer has a "strict-validate-path-type" check. -host.http.paths[0].path must at least be set. Then pathType "ImplementationSpecific" is used with common service name and port. Multiple paths may be specified
+    rules: []
+    # Minimum sample
+#      - host:
+#        http:
+#          paths:
+#            - path: /
+#              pathType:
+#              backend:
+#                service:
+#                  name:
+#                  port:
+#                    number:
+
+    className: nginx
+    annotations: {}
+      # Add annotations for the ingress, e.g.:
+      # cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
+      # nginx.ingress.kubernetes.io/rewrite-target: /$2
+      # nginx.ingress.kubernetes.io/use-regex: "true"
+      # nginx.ingress.kubernetes.io/enable-cors: "true"
+      # nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+      # nginx.ingress.kubernetes.io/x-forwarded-prefix: /bpndiscovery
   resources:
     limits:
       cpu: 750m
@@ -86,6 +120,11 @@ bpndiscovery:
       memory: 1024Mi
 
 postgresql:
+  image:
+    # -- workaround to use bitnamilegacy chart for version 12.12.x till committers align on new postgresql charts
+    repository: bitnamilegacy/postgresql
+    # -- workaround to use bitnamilegacy chart for version 12.12.x till committers align on new postgresql charts
+    tag: 15.4.0-debian-11-r45
   primary:
     persistence:
       enabled: true
