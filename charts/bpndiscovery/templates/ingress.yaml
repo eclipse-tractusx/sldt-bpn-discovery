@@ -1,5 +1,6 @@
 {{- if .Values.bpndiscovery.ingress.enabled }}
 # Copyright (c) 2023 Robert Bosch Manufacturing Solutions GmbH
+# Copyright (c) 2025 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e.V. (represented by Fraunhofer ISST)
 # Copyright (c) 2023 Contributors to the Eclipse Foundation
 #
 # See the NOTICE file(s) distributed with this work for additional
@@ -28,12 +29,15 @@ metadata:
   {{- include "bpndiscovery.labels" . | nindent 4 }}
 spec:
   ingressClassName: {{ .Values.bpndiscovery.ingress.className }}
-  {{- if .Values.bpndiscovery.ingress.tls }}
+  {{- if .Values.bpndiscovery.ingress.tls.enabled }}
   tls:
     - hosts:
         - {{ .Values.bpndiscovery.host }}
-      secretName: bpndiscovery-certificate-secret
+      secretName: {{ .Values.bpndiscovery.ingress.tls.secretName | default "bpndiscovery-certificate-secret" }}
+  {{- else }}
+  tls: []  # Ensures tls is an empty list when not enabled
   {{- end }}
+  {{- if .Values.bpndiscovery.ingress.urlPrefix }}
   rules:
     - host: {{ .Values.bpndiscovery.host }}
       http:
@@ -45,4 +49,21 @@ spec:
                 name: {{ include "bpndiscovery.fullname" . }}
                 port:
                   number: {{ .Values.bpndiscovery.service.port }}
+  {{- else }}
+  rules:
+    {{- range .Values.bpndiscovery.ingress.rules }}
+    - host: {{ .host | default $.Values.bpndiscovery.host }}
+      http:
+        paths:
+          {{- range .http.paths }}
+          - path: {{ .path }}
+            pathType: {{ .pathType | default "ImplementationSpecific" }}
+            backend:
+              service:
+                name: {{ include "bpndiscovery.fullname" $ }}
+                port:
+                  number: {{ $.Values.bpndiscovery.service.port }}
+          {{- end }}
+    {{- end}}
+  {{- end}}
 {{- end }}
