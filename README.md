@@ -23,7 +23,7 @@ The BPN Discovery is a logical and architectural component of Tractus-X. The sou
 Discovery.
 The BPN Discovery is used to lookup for a specific type/key-combination to a Business Partner Number (BPN). For example looking for a
 combination "oen / oen-133" will lead to "BPNLXYZ123". For a further information have a look in our
-[documentation](docs/1-introduction-and-goals.md).
+[documentation](docs/architecture/1-introduction-and-goals.md).
 
 ## Build Packages
 
