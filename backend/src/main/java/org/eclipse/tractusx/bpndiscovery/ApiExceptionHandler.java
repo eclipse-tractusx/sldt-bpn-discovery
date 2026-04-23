@@ -59,8 +59,8 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
    public ResponseEntity<ErrorResponse> handleDuplicateKeyException( final HttpServletRequest request, DuplicateKeyException exception ) {
       return new ResponseEntity<>( new ErrorResponse()
             .error( new Error()
-                  .message( "Entity for the given resourceId already exists." )
-                  .path( request.getRequestURI() ) ), HttpStatus.BAD_REQUEST );
+                  .message( "Entity already exists." )
+                  .path( request.getRequestURI() ) ), HttpStatus.OK );
    }
 
    @ExceptionHandler( { AccessDeniedException.class } )

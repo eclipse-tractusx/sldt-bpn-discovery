@@ -21,11 +21,13 @@ package org.eclipse.tractusx.bpndiscovery.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.eclipse.tractusx.bpndiscovery.dto.BatchResultDto;
 import org.eclipse.tractusx.bpndiscovery.dto.BpnDiscoveryCollectionDto;
+import org.eclipse.tractusx.bpndiscovery.dto.SaveResultDto;
 import org.eclipse.tractusx.bpndiscovery.dto.TypeKeysIdentifierDto;
 import org.eclipse.tractusx.bpndiscovery.model.BpnDiscovery;
 import org.eclipse.tractusx.bpndiscovery.repository.BpnDiscoveryRepository;
@@ -55,10 +57,15 @@ public class BpnDiscoveryService {
    }
 
    @Transactional
-   public BpnDiscovery save( BpnDiscovery bpnDiscovery ) {
+   public SaveResultDto save( BpnDiscovery bpnDiscovery ) {
       BpnDiscovery bpnDiscoveryWithValue = bpnDiscovery.withValue( clientAware.getBpn() );
       bpnDiscoveryValidator.validate( bpnDiscoveryWithValue );
-      return bpnDiscoveryRepository.save( bpnDiscoveryWithValue );
+      Optional<BpnDiscovery> existing = bpnDiscoveryRepository.findByTypeAndKeyAndValue(
+            bpnDiscoveryWithValue.getType(), bpnDiscoveryWithValue.getKey(), bpnDiscoveryWithValue.getValue() );
+      if ( existing.isPresent() ) {
+         return new SaveResultDto( existing.get(), false );
+      }
+      return new SaveResultDto( bpnDiscoveryRepository.save( bpnDiscoveryWithValue ), true );
    }
 
    @Transactional( readOnly = true )
@@ -81,8 +88,9 @@ public class BpnDiscoveryService {
    public List<BatchResultDto> saveBatch( List<BpnDiscovery> bpnDiscoveries ) {
       return bpnDiscoveries.stream().map( bpnDiscovery -> {
          try {
-            save( bpnDiscovery );
-            return new BatchResultDto( "BpnDiscovery successfully created", null,
+            SaveResultDto result = save( bpnDiscovery );
+            String message = result.created() ? "BpnDiscovery successfully created" : "BpnDiscovery already exists";
+            return new BatchResultDto( message, null,
                   bpnDiscovery.getKey(), HttpStatus.OK.value() );
          } catch ( Exception e ) {
             if ( e instanceof ValidationException ) {
@@ -92,8 +100,8 @@ public class BpnDiscoveryService {
             }
 
             if ( e.getCause() instanceof DuplicateKeyException ) {
-               return new BatchResultDto( "duplicated entity. Key type combination exists.", null,
-                     bpnDiscovery.getKey(), HttpStatus.BAD_REQUEST.value() );
+               return new BatchResultDto( "BpnDiscovery already exists", null,
+                     bpnDiscovery.getKey(), HttpStatus.OK.value() );
             }
             return new BatchResultDto(
                   String.format( "Failed to create BpnDiscovery %s", e.getMessage() ), null,

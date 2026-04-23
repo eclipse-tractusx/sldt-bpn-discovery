@@ -79,6 +79,15 @@ paths:
               examples:
                 complete:
                   $ref: '#/components/examples/bpn-result'
+        "200":
+          description: Resource already exists. The existing resource is returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bpn'
+              examples:
+                complete:
+                  $ref: '#/components/examples/bpn-result'
   /administration/connectors/bpnDiscovery/batch:
     post:
       tags:

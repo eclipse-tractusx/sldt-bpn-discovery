@@ -19,8 +19,6 @@
  ********************************************************************************/
 package org.eclipse.tractusx.bpndiscovery;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import org.eclipse.tractusx.bpndiscovery.repository.BpnDiscoveryRepository;
 import org.eclipse.tractusx.bpndiscovery.security.TestJwtTokenFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +30,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -84,7 +83,7 @@ public abstract class AbstractBpnDiscoveryApiTest {
                         .with( testJwtTokenFactory.allRoles_andBpn() )
             )
             .andDo( MockMvcResultHandlers.print() )
-            .andExpect( status().isCreated() )
+            .andExpect( MockMvcResultMatchers.status().is2xxSuccessful() )
             .andReturn();
 
       String sResult = result.getResponse().getContentAsString();

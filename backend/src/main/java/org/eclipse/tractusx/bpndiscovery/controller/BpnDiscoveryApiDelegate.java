@@ -25,6 +25,7 @@ import java.util.Optional;
 import org.eclipse.tractusx.bpndiscovery.api.DiscoveryApiDelegate;
 import org.eclipse.tractusx.bpndiscovery.dto.BatchResultDto;
 import org.eclipse.tractusx.bpndiscovery.dto.BpnDiscoveryCollectionDto;
+import org.eclipse.tractusx.bpndiscovery.dto.SaveResultDto;
 import org.eclipse.tractusx.bpndiscovery.dto.TypeKeysIdentifierDto;
 import org.eclipse.tractusx.bpndiscovery.mapper.BpnDiscoveryMapper;
 import org.eclipse.tractusx.bpndiscovery.model.Bpn;
@@ -77,7 +78,8 @@ public class BpnDiscoveryApiDelegate implements DiscoveryApiDelegate {
 
    @Override
    public ResponseEntity<Bpn> postBpnDiscovery( IdentifierTypeKeyPair identifierTypeKeyPair ) {
-      BpnDiscovery bpnDiscovery = bpnDiscoveryService.save( bpnDiscoveryMapper.fromApiDto( identifierTypeKeyPair ) );
-      return new ResponseEntity<>( bpnDiscoveryMapper.toApiDto( bpnDiscovery ), HttpStatus.CREATED );
+      SaveResultDto result = bpnDiscoveryService.save( bpnDiscoveryMapper.fromApiDto( identifierTypeKeyPair ) );
+      HttpStatus status = result.created() ? HttpStatus.CREATED : HttpStatus.OK;
+      return new ResponseEntity<>( bpnDiscoveryMapper.toApiDto( result.bpnDiscovery() ), status );
    }
 }
