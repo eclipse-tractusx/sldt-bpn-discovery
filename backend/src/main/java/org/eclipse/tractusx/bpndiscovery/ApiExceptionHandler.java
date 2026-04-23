@@ -32,13 +32,18 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
+   private static final Logger log = LoggerFactory.getLogger( ApiExceptionHandler.class );
+
    @ExceptionHandler( { ValidationException.class } )
    public ResponseEntity<ErrorResponse> handleValidationException( final HttpServletRequest request,
          final ValidationException exception ) {
+      log.debug( "Validation failed for request [{}]: {} | Details: {}", request.getRequestURI(), exception.getMessage(), exception.getDetails() );
       return new ResponseEntity<>( new ErrorResponse()
             .error( new Error()
                   .message( exception.getMessage() )
@@ -49,6 +54,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
    @ExceptionHandler( { EntityNotFoundException.class } )
    public ResponseEntity<ErrorResponse> handleEntityNotFoundException( final HttpServletRequest request,
          final RuntimeException exception ) {
+      log.debug( "Entity not found for request [{}]: {}", request.getRequestURI(), exception.getMessage() );
       return new ResponseEntity<>( new ErrorResponse()
             .error( new Error()
                   .message( exception.getMessage() )
@@ -57,6 +63,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
    @ExceptionHandler( { DuplicateKeyException.class } )
    public ResponseEntity<ErrorResponse> handleDuplicateKeyException( final HttpServletRequest request, DuplicateKeyException exception ) {
+      log.debug( "Duplicate key violation for request [{}]: {}", request.getRequestURI(), exception.getMostSpecificCause().getMessage() );
       return new ResponseEntity<>( new ErrorResponse()
             .error( new Error()
                   .message( "Entity already exists." )
@@ -66,6 +73,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
    @ExceptionHandler( { AccessDeniedException.class } )
    public ResponseEntity<ErrorResponse> handleAccessDeniedException( final HttpServletRequest request,
          final AccessDeniedException exception ) {
+      log.debug( "Access denied for request [{}]: {}", request.getRequestURI(), exception.getMessage() );
       return new ResponseEntity<>( new ErrorResponse()
             .error( new Error()
                   .message( exception.getMessage() )
