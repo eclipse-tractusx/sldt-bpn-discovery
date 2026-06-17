@@ -33,4 +33,6 @@ public interface BpnDiscoveryRepository extends CrudRepository<BpnDiscovery, UUI
    Optional<BpnDiscovery> findBpnDiscoveryByResourceId( String resourceId );
 
    List<BpnDiscovery> findBpnDiscoveriesByTypeAndKeyIn( String type, List<String> keys );
+
+   Optional<BpnDiscovery> findByTypeAndKeyAndValue( String type, String key, String value );
 }

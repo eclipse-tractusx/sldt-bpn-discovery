@@ -61,6 +61,37 @@ public class BpnDiscoveryApiDelegateTest extends AbstractBpnDiscoveryApiTest {
    }
 
    @Test
+   public void givenDuplicateBpnDiscovery_whenSave_thenReturnOk() throws Exception {
+      //given
+      ObjectNode givenPayLoad = createTypeKeyPayLoad( "oen", "oen-133-dup" );
+
+      // first call -> 201
+      mockMvc.perform(
+                  MockMvcRequestBuilders
+                        .post( BPN_DISCOVERY_BASE_PATH )
+                        .accept( MediaType.APPLICATION_JSON )
+                        .contentType( MediaType.APPLICATION_JSON )
+                        .content( toJson( givenPayLoad ) )
+                        .with( testJwtTokenFactory.allRoles_andBpn() )
+            )
+            .andDo( MockMvcResultHandlers.print() )
+            .andExpect( status().isCreated() );
+
+      // when second call -> then http 200
+      mockMvc.perform(
+                  MockMvcRequestBuilders
+                        .post( BPN_DISCOVERY_BASE_PATH )
+                        .accept( MediaType.APPLICATION_JSON )
+                        .contentType( MediaType.APPLICATION_JSON )
+                        .content( toJson( givenPayLoad ) )
+                        .with( testJwtTokenFactory.allRoles_andBpn() )
+            )
+            .andDo( MockMvcResultHandlers.print() )
+            .andExpect( status().isOk() )
+            .andExpect( content().json( toJson( givenPayLoad ) ) );
+   }
+
+   @Test
    public void givenNotAllowedType_whenSave_thenValidationFailed() throws Exception {
       //given
       ObjectNode givenInvalidPayLoad = createTypeKeyPayLoad( "bpn", "oen-124" );
@@ -127,7 +158,7 @@ public class BpnDiscoveryApiDelegateTest extends AbstractBpnDiscoveryApiTest {
    }
 
    @Test
-   public void givenDuplicates_whenBatchSave_thenResultIncludesValidationFailed() throws Exception {
+   public void givenDuplicates_whenBatchSave_thenResultIncludesAlreadyExists() throws Exception {
       //given
       ObjectNode givenInvalidNode1 = createTypeKeyPayLoad( "oen", "oen-123" );
       ObjectNode givenInvalidNode2 = createTypeKeyPayLoad( "oen", "oen-123" );
@@ -147,7 +178,9 @@ public class BpnDiscoveryApiDelegateTest extends AbstractBpnDiscoveryApiTest {
                         .with( testJwtTokenFactory.allRoles_andBpn() )
             )
             .andDo( MockMvcResultHandlers.print() )
-            .andExpect( content().string( containsString( "duplicated entity. Key type combination exists." ) ) )
+            .andExpect( jsonPath( "$[0].status", is( 200 ) ) )
+            .andExpect( jsonPath( "$[1].status", is( 200 ) ) )
+            .andExpect( content().string( containsString( "BpnDiscovery already exists" ) ) )
             .andExpect( status().isCreated() );
    }
 
