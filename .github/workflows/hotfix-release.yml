@@ -10,7 +10,7 @@
 
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+0# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
 
@@ -31,11 +31,11 @@ jobs:
     permissions: 
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@3a4f6111f18e3a0147563e7784f39100145c11a0 # v4.5.0
         with:
           java-version: '17'
           distribution: 'adopt'

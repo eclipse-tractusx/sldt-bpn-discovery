@@ -48,9 +48,9 @@ jobs:
           echo mask_client_secret=$mask_client_secret >> $GITHUB_ENV
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@42375524e23c412d93fb67b49958b491fbb71545 # v5.2.0
         with:
           python-version: "3.8"
           check-latest: true
@@ -70,7 +70,7 @@ jobs:
           AUTH_SERVER_TOKEN_URL: ${{ inputs.tokenUrl }}
           BPNDISCOVERY_API_URL: ${{ inputs.bpnDiscoveryUrl }}
       - name: Upload test report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7759391cf04140228109177b22c97a3a93d83b0 # v4.6.0
         if: always()
         with:
           name: bpndiscovery-e2e-test-report
