@@ -72,11 +72,30 @@ bpndiscovery:
     user:
     password:
   ingress:
-    enabled: false
-    tls: false
-    urlPrefix: /bpndiscovery
-    className: nginx
-    annotations: {}
+      enabled: false
+      className: "nginx"
+      annotations:
+        # -- Provide TLS certificate issuer
+        # cert-manager.io/cluster-issuer: "my-issuer"
+        nginx.ingress.kubernetes.io/rewrite-target: "/$2"
+        nginx.ingress.kubernetes.io/use-regex: "true"
+        nginx.ingress.kubernetes.io/enable-cors: "true"
+        nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+        nginx.ingress.kubernetes.io/x-forwarded-prefix: /bpndiscovery
+      tls:
+        # -- Provide tls secret.
+        - secretName: "bpndiscovery-certificate-secret"
+          # -- Provide host for tls secret.
+          hosts:
+            - "bpndiscovery.example.org"
+      hosts:
+        - host: "bpndiscovery.example.org"
+          paths:
+            - path: "/bpndiscovery(/|$)(.*)"
+              pathType: "ImplementationSpecific"
+              backend:
+                service: "bpndiscovery"
+                port: 8080
   resources:
     limits:
       cpu: 750m

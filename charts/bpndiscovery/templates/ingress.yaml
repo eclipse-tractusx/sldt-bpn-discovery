@@ -1,4 +1,4 @@
-{{- if .Values.bpndiscovery.ingress.enabled }}
+{{- if .Values.bpndiscovery.ingress.enabled -}}
 # Copyright (c) 2023 Robert Bosch Manufacturing Solutions GmbH
 # Copyright (c) 2023 Contributors to the Eclipse Foundation
 #
@@ -17,32 +17,67 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
-
+{{- end }}
+{{ if .Values.bpndiscovery.ingress.enabled -}}
+{{- $fullName := include "bpndiscovery.fullname" . -}}
+{{- $svcPort := .Values.bpndiscovery.service.port -}}
+{{- if and .Values.bpndiscovery.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
+  {{- if not (hasKey .Values.bpndiscovery.ingress.annotations "kubernetes.io/ingress.class") }}
+  {{- $_ := set .Values.bpndiscovery.ingress.annotations "kubernetes.io/ingress.class" .Values.bpndiscovery.ingress.className }}
+  {{- end }}
+{{- end }}
+{{- if semverCompare ">=1.19-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1
+{{- else if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: networking.k8s.io/v1beta1
+{{- else -}}
+apiVersion: extensions/v1beta1
+{{- end }}
 kind: Ingress
 metadata:
-  name: {{ include "bpndiscovery.fullname" . }}
-  annotations:
-{{ .Values.bpndiscovery.ingress.annotations | toYaml | indent 4 }}
+  name: {{ $fullName }}-ingress
+  namespace: {{ .Release.Namespace }}
   labels:
-  {{- include "bpndiscovery.labels" . | nindent 4 }}
+    {{- include "bpndiscovery.labels" . | nindent 4 }}
+  {{- with .Values.bpndiscovery.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
+  {{- if and .Values.bpndiscovery.ingress.className (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion) }}
   ingressClassName: {{ .Values.bpndiscovery.ingress.className }}
+  {{- end }}
   {{- if .Values.bpndiscovery.ingress.tls }}
   tls:
+    {{- range .Values.bpndiscovery.ingress.tls }}
     - hosts:
-        - {{ .Values.bpndiscovery.host }}
-      secretName: bpndiscovery-certificate-secret
+        {{- range .hosts }}
+        - {{ . | quote }}
+        {{- end }}
+      secretName: {{ .secretName }}
+    {{- end }}
   {{- end }}
   rules:
-    - host: {{ .Values.bpndiscovery.host }}
+    {{- range .Values.bpndiscovery.ingress.hosts }}
+    - host: {{ .host | quote }}
       http:
         paths:
-          - path: {{printf "%s(/|$)(.*)" .Values.bpndiscovery.ingress.urlPrefix }}
-            pathType: Prefix
+          {{- range .paths }}
+          - path: {{ .path }}
+            {{- if and .pathType (semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion) }}
+            pathType: {{ .pathType }}
+            {{- end }}
             backend:
+              {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
               service:
-                name: {{ include "bpndiscovery.fullname" . }}
+                name: {{ $fullName }}-{{ .backend.service }}
                 port:
-                  number: {{ .Values.bpndiscovery.service.port }}
+                  number: {{ $svcPort }}
+              {{- else }}
+              serviceName: {{ $fullName }}-{{ .backend.service }}
+              servicePort: {{ .backend.port }}
+              {{- end }}
+          {{- end }}
+    {{- end }}
 {{- end }}
+
